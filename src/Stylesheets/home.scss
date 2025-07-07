@@ -134,6 +134,7 @@ body {
       height: 50vh;
       position: absolute;
       border-radius: 2rem;
+      will-change: opacity, transform;
     }
 
     #card1 {
