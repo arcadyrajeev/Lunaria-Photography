@@ -9,13 +9,13 @@ export function animateIntroCards() {
   cards.forEach((card, index) => {
     gsap.from(card, {
       y: 200,
-      opacity: 0.2, // start from below
+      opacity: 0.5,
       duration: 1,
       ease: "power2.out",
       scrollTrigger: {
         trigger: card,
-        start: "top 90%", // when the top of the card reaches 80% of the viewport height
-        end: "top 40%", // when the top of the card reaches 30% of the viewport height
+        start: "top 100%", // when the top of the card reaches 80% of the viewport height
+        end: "top 45%", // when the top of the card reaches 30% of the viewport height
         scrub: 1, // smooth scrubbing
         toggleActions: "play none none reverse", // play on enter, reverse on leave
       },

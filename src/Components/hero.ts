@@ -16,7 +16,6 @@ function showSlide(index: number) {
   const img = document.getElementById("hero-image") as HTMLImageElement | null;
   if (!img) return;
   img.src = images[index];
-  img.style.transform;
 }
 
 function startSlideshow(interval = 15000) {
