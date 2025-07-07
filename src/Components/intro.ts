@@ -8,7 +8,7 @@ export function animateIntroCards() {
 
   cards.forEach((card, index) => {
     gsap.from(card, {
-      y: 150, // start from below
+      y: 200, // start from below
       duration: 1,
       ease: "power2.out",
       scrollTrigger: {
