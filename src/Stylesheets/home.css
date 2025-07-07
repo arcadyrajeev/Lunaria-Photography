@@ -23,17 +23,19 @@ body {
 }
 
 .hero {
-  height: 94vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   z-index: -1;
 }
 .hero .slideshow {
+  display: flex;
+  position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 .hero .slideshow img {
   position: absolute;
@@ -49,23 +51,30 @@ body {
           user-select: none;
 }
 .hero .ctrl {
-  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   width: 2vw;
   height: 6vw;
   padding: 0.2rem;
   border-radius: 1rem;
-  opacity: 0.8;
+  border: solid 0.1rem #ede6dd;
   position: absolute;
   justify-content: center;
   align-items: center;
   z-index: 3;
   cursor: pointer;
-  will-change: opacity;
+  transition: background-color 0.2s ease-in-out;
+  will-change: opacity, background-color;
 }
 .hero .ctrl img {
   height: 70%;
   width: auto;
+  transition: filter 0.3s ease;
+}
+.hero .ctrl:hover img {
+  filter: brightness(0.4);
+}
+.hero .ctrl:hover {
+  background-color: #ede6dd;
 }
 .hero #prev {
   left: 1vw;
@@ -197,17 +206,22 @@ body {
   border-radius: 2rem;
   box-shadow: 0 0 0 #a293b2;
   cursor: pointer;
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 .navbar .button:hover {
+  background-color: #26483e;
   transform: translateX(0.5rem);
   box-shadow: -0.5rem 0 0 #a293b2;
+}
+.navbar .button:hover a {
+  color: #ede6dd;
 }
 .navbar .button a {
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
   color: #1a1a1a;
+  transition: color 0.2s ease-in-out;
 }
 
 .pricing {

@@ -46,17 +46,19 @@ body {
 // =====================
 
 .hero {
-  height: 94vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   z-index: -1;
 
   .slideshow {
+    display: flex;
+    position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     img {
       position: absolute;
       top: 0;
@@ -70,23 +72,32 @@ body {
   }
 
   .ctrl {
-    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     width: 2vw;
     height: 6vw;
     padding: 0.2rem;
     border-radius: 1rem;
-    opacity: 0.8;
+    border: solid 0.1rem $offwhite;
     position: absolute;
     justify-content: center;
     align-items: center;
     z-index: 3;
     cursor: pointer;
-    will-change: opacity;
+    transition: background-color 0.2s ease-in-out;
+    will-change: opacity, background-color;
 
     img {
       height: 70%;
       width: auto;
+      transition: filter 0.3s ease;
+    }
+
+    &:hover img {
+      filter: brightness(0.4);
+    }
+
+    &:hover {
+      background-color: $offwhite;
     }
   }
 
@@ -249,12 +260,18 @@ body {
     box-shadow: 0 0 0 $secondary-color;
     cursor: pointer;
     transition:
+      background-color 0.2s ease-in-out,
       box-shadow 0.2s ease-in-out,
       transform 0.2s ease-in-out;
 
     &:hover {
+      background-color: $primary-color;
       transform: translateX(0.5rem);
       box-shadow: -0.5rem 0 0 $secondary-color;
+    }
+
+    &:hover a {
+      color: $offwhite;
     }
 
     a {
@@ -262,6 +279,7 @@ body {
       font-size: 0.9rem;
       font-weight: 500;
       color: $jetblack;
+      transition: color 0.2s ease-in-out;
     }
   }
 }
