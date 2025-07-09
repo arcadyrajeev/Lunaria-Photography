@@ -74,7 +74,7 @@ export function Hero() {
   });
 
   return `
-    <div class="hero">
+    <div class="hero" id="main-content">
       <div class="slideshow">
         <img src="" id="hero-image" alt="hero slideshow image" />
       </div>

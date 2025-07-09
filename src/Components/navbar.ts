@@ -6,15 +6,16 @@ gsap.registerPlugin(ScrollTrigger);
 // Animate logo size on scroll
 export function AnimateLogoOnScroll() {
   const logo = document.getElementById("logo");
+  const mainContent = document.getElementById("main-content");
   const navbar = document.querySelector(".navbar");
   const navLinks = document.querySelectorAll(".nav-links");
 
   if (!logo) return;
 
   const scrollConfig = {
-    trigger: document.body,
+    trigger: mainContent,
     start: "top top",
-    end: "500vh top",
+    end: "700vh top",
     scrub: true,
   };
 

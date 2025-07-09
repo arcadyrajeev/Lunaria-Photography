@@ -25,6 +25,28 @@ $offwhite: #ede6dd;
 // Global Styles
 // =====================
 
+/* Entire scrollbar */
+::-webkit-scrollbar {
+  width: 0.5rem; /* vertical scrollbar */
+  height: 0.5rem; /* horizontal scrollbar */
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* dark background */
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+  background: #888; /* gray thumb */
+  border-radius: 6px;
+}
+
+/* Scrollbar Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* darker on hover */
+}
+
 *,
 *::before,
 *::after {
@@ -39,6 +61,94 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Albert Sans", sans-serif;
+}
+
+// =====================
+// Navbar
+// =====================
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 14vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 4rem 6rem;
+  z-index: 10;
+  will-change: background-color;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    width: 12rem;
+    min-width: 12rem;
+    height: auto;
+    transform: translateY(0.8rem);
+    will-change: transform;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 6vw;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: $offwhite;
+      font-size: 0.9rem;
+      font-weight: 400;
+      font-family: "Albert Sans", sans-serif;
+      transition:
+        color 0.2s ease-in-out,
+        transform 0.2s ease-in-out;
+
+      &:hover {
+        color: $secondary-color;
+        transform: translateY(-0.2rem);
+      }
+    }
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 1.2rem;
+    background-color: $offwhite;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 $secondary-color;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out,
+      transform 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $primary-color;
+      transform: translateX(0.5rem);
+      box-shadow: -0.5rem 0 0 $secondary-color;
+    }
+
+    &:hover a {
+      color: $offwhite;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: $jetblack;
+      transition: color 0.2s ease-in-out;
+    }
+  }
 }
 
 // =====================
@@ -192,94 +302,6 @@ body {
       font-weight: 100;
       color: $primary-color;
       margin-bottom: 1vw;
-    }
-  }
-}
-
-// =====================
-// Navbar
-// =====================
-
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 14vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-inline: 4rem 6rem;
-  z-index: 10;
-  will-change: background-color;
-
-  .logo {
-    display: flex;
-    align-items: center;
-    width: 12rem;
-    min-width: 12rem;
-    height: auto;
-    transform: translateY(0.8rem);
-    will-change: transform;
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 6vw;
-    align-items: center;
-
-    a {
-      text-decoration: none;
-      color: $offwhite;
-      font-size: 0.9rem;
-      font-weight: 400;
-      font-family: "Albert Sans", sans-serif;
-      transition:
-        color 0.2s ease-in-out,
-        transform 0.2s ease-in-out;
-
-      &:hover {
-        color: $secondary-color;
-        transform: translateY(-0.2rem);
-      }
-    }
-  }
-
-  .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.4rem 1.2rem;
-    background-color: $offwhite;
-    border-radius: 2rem;
-    box-shadow: 0 0 0 $secondary-color;
-    cursor: pointer;
-    transition:
-      background-color 0.2s ease-in-out,
-      box-shadow 0.2s ease-in-out,
-      transform 0.2s ease-in-out;
-
-    &:hover {
-      background-color: $primary-color;
-      transform: translateX(0.5rem);
-      box-shadow: -0.5rem 0 0 $secondary-color;
-    }
-
-    &:hover a {
-      color: $offwhite;
-    }
-
-    a {
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: $jetblack;
-      transition: color 0.2s ease-in-out;
     }
   }
 }

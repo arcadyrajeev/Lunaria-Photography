@@ -5,6 +5,7 @@ import { About } from "./Components/about";
 import { Footer } from "./Components/footer";
 import "./Stylesheets/home.css";
 import "./Stylesheets/Gallary.css";
+import "./Stylesheets/mobile.css";
 import { Pricing } from "./Components/pricing";
 import { Intro } from "./Components/intro";
 

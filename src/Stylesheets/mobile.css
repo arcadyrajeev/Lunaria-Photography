@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "Albert Sans";
+  src: url("../assets/AlbertSans-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bell MT";
+  src: url("../assets/Bell MT Regular.otf") format("opentype");
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Albert Sans", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 15vw;
+    border: 2px solid #ede6dd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    will-change: transform, background-color;
+  }
+  .navbar .nav-links {
+    display: none;
+  }
+  .navbar .logo {
+    display: flex;
+    width: 50vw;
+    height: auto;
+    will-change: transform;
+    transform: translateY(10vh);
+  }
+  .navbar .button {
+    display: none;
+  }
+  .hero {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero .slideshow {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .hero .slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    pointer-events: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  .hero .ctrl {
+    display: flex;
+    width: 2vw;
+    height: 6vw;
+    padding: 0.2rem;
+    border-radius: 1rem;
+    border: solid 0.1rem #ede6dd;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    will-change: opacity, background-color;
+  }
+  .hero .ctrl img {
+    height: 70%;
+    width: auto;
+    transition: filter 0.3s ease;
+  }
+  .hero .ctrl:hover img {
+    filter: brightness(0.4);
+  }
+  .hero .ctrl:hover {
+    background-color: #ede6dd;
+  }
+  .hero #prev {
+    left: 1vw;
+  }
+  .hero #next {
+    right: 1vw;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    pointer-events: none;
+    z-index: 1;
+  }
+}/*# sourceMappingURL=mobile.css.map */
