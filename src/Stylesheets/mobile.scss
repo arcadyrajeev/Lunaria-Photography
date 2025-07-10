@@ -96,11 +96,11 @@ body {
 
     .ctrl {
       display: flex;
-      width: 2vw;
-      height: 6vw;
+      width: 3vw;
+      height: 15vw;
       padding: 0.2rem;
       border-radius: 1rem;
-      border: solid 0.1rem $offwhite;
+      border: none;
       position: absolute;
       justify-content: center;
       align-items: center;
@@ -126,10 +126,12 @@ body {
 
     #prev {
       left: 1vw;
+      bottom: 20vw;
     }
 
     #next {
       right: 1vw;
+      bottom: 20vw;
     }
 
     &::after {

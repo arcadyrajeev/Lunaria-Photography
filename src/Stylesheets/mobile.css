@@ -76,11 +76,11 @@ body {
   }
   .hero .ctrl {
     display: flex;
-    width: 2vw;
-    height: 6vw;
+    width: 3vw;
+    height: 15vw;
     padding: 0.2rem;
     border-radius: 1rem;
-    border: solid 0.1rem #ede6dd;
+    border: none;
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -102,9 +102,11 @@ body {
   }
   .hero #prev {
     left: 1vw;
+    bottom: 20vw;
   }
   .hero #next {
     right: 1vw;
+    bottom: 20vw;
   }
   .hero::after {
     content: "";
