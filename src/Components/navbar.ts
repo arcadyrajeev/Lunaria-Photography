@@ -9,6 +9,7 @@ export function AnimateLogoOnScroll() {
   const mainContent = document.getElementById("main-content");
   const navbar = document.querySelector(".navbar");
   const navLinks = document.querySelectorAll(".nav-links");
+  const mm = gsap.matchMedia();
 
   if (!logo) return;
 
@@ -40,6 +41,22 @@ export function AnimateLogoOnScroll() {
     gap: "2rem",
     ease: "power2.out",
     scrollTrigger: scrollConfig,
+  });
+
+  mm.add("(max-width: 600px)", () => {
+    gsap.to(logo, {
+      scale: 0.5,
+      y: 0,
+      x: -60,
+      transformOrigin: "left center",
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: mainContent,
+        start: "top top",
+        end: "700vh top",
+        scrub: true,
+      },
+    });
   });
 }
 
