@@ -86,8 +86,9 @@ body {
     align-items: center;
     z-index: 3;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    will-change: opacity, background-color;
+  }
+  .hero .ctrl:hover {
+    background-color: none;
   }
   .hero .ctrl img {
     height: 70%;

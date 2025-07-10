@@ -106,8 +106,10 @@ body {
       align-items: center;
       z-index: 3;
       cursor: pointer;
-      transition: background-color 0.2s ease-in-out;
-      will-change: opacity, background-color;
+
+      &:hover {
+        background-color: none; // Remove background color on hover
+      }
 
       img {
         height: 70%;
