@@ -22,7 +22,6 @@ export function animateIntroCards() {
           start: "top 100%",
           end: `top ${endOffset}%`,
           scrub: 2, // smooth scrolling effect
-          toggleActions: "play none none reverse",
         },
       });
     });
@@ -33,15 +32,12 @@ export function animateIntroCards() {
     cards.forEach((card) => {
       gsap.from(card, {
         y: 0,
-        opacity: 1,
-        duration: 1,
         ease: "power2.out",
         scrollTrigger: {
           trigger: ".image-container",
-          start: "top 100%", //when the top of the card reaches the bottom of the viewport
-          end: "bottom 110%", //when the top of the card reaches the middle of the viewport
+          start: "top 110%", // when the top of the container reaches the bottom of the viewport
+          end: "bottom 100%", //when the bottom of the container reaches the bottom of the viewport
           scrub: 1.5,
-          toggleActions: "play none none reverse",
         },
       });
     });
