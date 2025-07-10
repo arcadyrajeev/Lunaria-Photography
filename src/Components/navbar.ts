@@ -47,7 +47,7 @@ export function AnimateLogoOnScroll() {
     gsap.to(logo, {
       scale: 0.5,
       y: 0,
-      x: -60,
+      x: -45,
       transformOrigin: "left center",
       ease: "power2.out",
       scrollTrigger: {
