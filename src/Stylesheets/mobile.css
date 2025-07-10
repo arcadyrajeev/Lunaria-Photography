@@ -94,12 +94,6 @@ body {
     width: auto;
     transition: filter 0.3s ease;
   }
-  .hero .ctrl:hover img {
-    filter: brightness(0.4);
-  }
-  .hero .ctrl:hover {
-    background-color: #ede6dd;
-  }
   .hero #prev {
     left: 1vw;
     bottom: 20vw;

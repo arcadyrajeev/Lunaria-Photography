@@ -114,14 +114,6 @@ body {
         width: auto;
         transition: filter 0.3s ease;
       }
-
-      &:hover img {
-        filter: brightness(0.4);
-      }
-
-      &:hover {
-        background-color: $offwhite;
-      }
     }
 
     #prev {
