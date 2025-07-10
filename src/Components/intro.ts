@@ -9,17 +9,19 @@ export function animateIntroCards() {
 
   // Desktop
   mm.add("(min-width: 1024px)", () => {
-    cards.forEach((card) => {
+    cards.forEach((card, index) => {
+      const endOffset = 50 + index * 20; // each card scrolls further = slower animation
+
       gsap.from(card, {
-        y: 0,
-        opacity: 1,
+        y: 150,
         duration: 1,
-        ease: "power2.out",
+        ease: "power2.out", // easing for smooth animation
+        stagger: 2, // stagger the animation for each card
         scrollTrigger: {
           trigger: card,
-          start: "top bottom",
-          end: "top center",
-          scrub: true,
+          start: "top 100%",
+          end: `top ${endOffset}%`,
+          scrub: 2, // smooth scrolling effect
           toggleActions: "play none none reverse",
         },
       });
@@ -38,7 +40,7 @@ export function animateIntroCards() {
           trigger: ".image-container",
           start: "top 100%", //when the top of the card reaches the bottom of the viewport
           end: "bottom 110%", //when the top of the card reaches the middle of the viewport
-          scrub: true,
+          scrub: 1.5,
           toggleActions: "play none none reverse",
         },
       });
