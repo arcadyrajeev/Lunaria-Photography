@@ -44,10 +44,9 @@ body {
 @media (max-width: 600px) {
   .navbar {
     position: fixed;
-    top: 0;
+    top: 0%;
     width: 100vw;
     height: 15vw;
-    border: 2px solid $offwhite;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -151,6 +150,69 @@ body {
 
       pointer-events: none; // Let clicks pass through
       z-index: 1;
+    }
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+
+    .image-container {
+      width: 80vw;
+      height: 200vw;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      align-items: center;
+      justify-content: center;
+
+      .image-card {
+        display: flex;
+        width: 45vw;
+        height: 60vw;
+        position: absolute;
+        border-radius: 2rem;
+        will-change: opacity, transform;
+      }
+
+      #card1 {
+        z-index: 1;
+        transform: translateX(-12vw) translateY(-50vw);
+        background-color: #26483e;
+      }
+      #card2 {
+        z-index: 1;
+        transform: translateX(12vw) translateY(50vw);
+        background-color: #a293b2;
+      }
+      #card3 {
+        z-index: 3;
+        transform: translateY(3vw);
+        background-color: #b46b0a;
+      }
+    }
+
+    .text-card {
+      width: 80vw;
+      display: flex;
+      padding-inline: 2rem;
+      text-align: justify;
+      flex-direction: column;
+      font-family: "Albert Sans", sans-serif;
+
+      p {
+        margin-bottom: 1rem;
+        color: $jetblack;
+        font-size: 0.9rem;
+      }
+
+      h2 {
+        margin-bottom: 2vw;
+      }
     }
   }
 }

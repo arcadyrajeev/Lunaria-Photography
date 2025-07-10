@@ -205,7 +205,7 @@ body {
 .intro .image-container .image-card {
   display: flex;
   width: 18vw;
-  height: 50vh;
+  height: 24vw;
   position: absolute;
   border-radius: 2rem;
   will-change: opacity, transform;
