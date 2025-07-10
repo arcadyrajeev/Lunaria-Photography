@@ -35,8 +35,8 @@ export function animateIntroCards() {
         ease: "power2.out",
         scrollTrigger: {
           trigger: ".image-container",
-          start: "top 110%", // when the top of the container reaches the bottom of the viewport
-          end: "bottom 100%", //when the bottom of the container reaches the bottom of the viewport
+          start: "top 60%", // when the top of the container reaches the bottom of the viewport
+          end: "bottom 70%", //when the bottom of the container reaches the bottom of the viewport
           scrub: 1.5,
         },
       });
