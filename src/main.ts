@@ -13,8 +13,8 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   ${Navbar()}
   ${Hero()}
   ${Intro()}
-  ${Pricing()}
   ${Gallery()}
+  ${Pricing()}
   ${About()}
   ${Footer()}
 `;

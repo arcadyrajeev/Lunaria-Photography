@@ -25,26 +25,22 @@ $offwhite: #ede6dd;
 // Global Styles
 // =====================
 
-/* Entire scrollbar */
 ::-webkit-scrollbar {
-  width: 0.5rem; /* vertical scrollbar */
-  height: 0.5rem; /* horizontal scrollbar */
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
-/* Scrollbar Track */
 ::-webkit-scrollbar-track {
-  background: #1a1a1a; /* dark background */
+  background: #1a1a1a;
 }
 
-/* Scrollbar Thumb */
 ::-webkit-scrollbar-thumb {
-  background: #888; /* gray thumb */
+  background: #888;
   border-radius: 6px;
 }
 
-/* Scrollbar Thumb on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; /* darker on hover */
+  background: #555;
 }
 
 *,
@@ -61,6 +57,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Albert Sans", sans-serif;
+  font-size: clamp(14px, 1.5vw, 16px);
 }
 
 // =====================
@@ -71,19 +68,18 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 14vh;
+  height: 14dvh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 4rem 6rem;
+  padding-inline: clamp(2rem, 4vw, 6rem);
   z-index: 10;
   will-change: background-color;
 
   .logo {
     display: flex;
     align-items: center;
-    width: 12rem;
-    min-width: 12rem;
+    width: clamp(14rem, 14vw, 16rem);
     height: auto;
     transform: translateY(0.8rem);
     will-change: transform;
@@ -97,13 +93,13 @@ body {
 
   .nav-links {
     display: flex;
-    gap: 6vw;
+    gap: clamp(1rem, 4vw, 6vw);
     align-items: center;
 
     a {
       text-decoration: none;
       color: $offwhite;
-      font-size: 0.9rem;
+      font-size: clamp(0.8rem, 1vw, 0.9rem);
       font-weight: 400;
       font-family: "Albert Sans", sans-serif;
       transition:
@@ -121,7 +117,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.4rem 1.2rem;
+    padding: clamp(0.3rem, 0.8vw, 0.4rem) clamp(1rem, 3vw, 1.2rem);
     background-color: $offwhite;
     border-radius: 2rem;
     box-shadow: 0 0 0 $secondary-color;
@@ -143,7 +139,7 @@ body {
 
     a {
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: clamp(0.8rem, 1vw, 0.9rem);
       font-weight: 500;
       color: $jetblack;
       transition: color 0.2s ease-in-out;
@@ -169,6 +165,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+
     img {
       position: absolute;
       top: 0;
@@ -183,8 +180,8 @@ body {
 
   .ctrl {
     display: flex;
-    width: 2vw;
-    height: 6vw;
+    width: clamp(1.5rem, 2vw, 2vw);
+    height: clamp(4rem, 6vw, 6vw);
     padding: 0.2rem;
     border-radius: 1rem;
     border: solid 0.1rem $offwhite;
@@ -226,16 +223,12 @@ body {
     left: 0;
     width: 100%;
     height: 30%;
-
-    // Use gradient or solid black with opacity
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.6),
-      // Top gradient color
-      rgba(0, 0, 0, 0) // Bottom gradient color
+      rgba(0, 0, 0, 0)
     );
-
-    pointer-events: none; // Let clicks pass through
+    pointer-events: none;
     z-index: 1;
   }
 }
@@ -244,23 +237,27 @@ body {
   display: flex;
   width: 100%;
   align-items: center;
-  padding-inline: 4rem;
+  padding-inline: clamp(2rem, 4vw, 4rem);
   justify-content: space-around;
-  height: 100vh;
+  min-height: 100dvh;
+  flex-wrap: wrap;
+  gap: 2rem;
 
   .image-container {
     width: 50vw;
-    height: 60vh;
+    max-width: 600px;
+    height: auto;
     display: flex;
-    margin-bottom: 2rem;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
 
     .image-card {
       display: flex;
-      width: 18vw;
-      height: 24vw;
       position: absolute;
+      width: clamp(10rem, 18vw, 18rem);
+      height: clamp(14rem, 24vw, 24rem);
       border-radius: 2rem;
       will-change: opacity, transform;
     }
@@ -283,22 +280,21 @@ body {
   }
 
   .text-card {
-    width: 30vw;
-    display: flex;
-    padding-right: 4rem;
+    max-width: 30rem;
+    padding-right: clamp(1rem, 3vw, 4rem);
     text-align: justify;
+    display: flex;
     flex-direction: column;
-    font-family: "Albert Sans", sans-serif;
 
     p {
       margin-bottom: 1rem;
       color: $jetblack;
-      font-size: 0.9rem;
+      font-size: clamp(0.9rem, 2vw, 1rem);
     }
 
     h2 {
       font-family: "Bell mt", serif;
-      font-size: 1.8rem;
+      font-size: clamp(1.5rem, 4vw, 1.8rem);
       font-weight: 100;
       color: $primary-color;
       margin-bottom: 1vw;
@@ -314,14 +310,15 @@ body {
   margin-block: 1rem;
   border-radius: 2rem;
   padding-block: 1.5rem;
-  background-color: $primary-color;
-  min-height: 90vh;
+  background-color: $offwhite;
+
+  min-height: 90dvh;
 
   h1 {
-    margin-left: 4vw;
+    margin-left: clamp(1rem, 4vw, 4vw);
     font-family: "Bell MT", serif;
-    color: $offwhite;
-    font-size: 3rem;
+    color: $jetblack;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 100;
     margin-bottom: 1rem;
   }
@@ -330,38 +327,39 @@ body {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding-inline: 5vw;
+    padding-inline: clamp(1rem, 5vw, 5vw);
     margin-top: 3vh;
+    gap: 2rem;
 
     img {
-      height: 70vh;
-      width: auto;
+      width: 20%;
+      height: auto;
     }
 
     .tier {
       display: flex;
       min-height: 60vh;
       flex-direction: column;
-      width: 18%;
+      width: clamp(12rem, 18%, 20rem);
       padding-block: 2rem;
       border-radius: 6rem;
-      border: solid 0.3rem $offwhite;
+      border: solid 0.3rem $jetblack;
       align-items: center;
 
       h2 {
         text-align: center;
         font-family: "Bell MT", serif;
-        color: $offwhite;
-        font-size: 1.8rem;
+        color: $jetblack;
+        font-size: clamp(1.5rem, 4vw, 1.8rem);
         font-weight: 100;
         margin-block: 2rem;
       }
 
       ul {
-        margin-top: 15vh;
-        color: $offwhite;
-        font-size: small;
-        line-height: 2vw;
+        margin-top: 5vh;
+        color: $jetblack;
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
+        line-height: 1.6;
       }
     }
   }
@@ -369,11 +367,13 @@ body {
 
 .about {
   display: flex;
-  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 2rem;
 }
 
 .footer {
   display: flex;
-  min-height: 30vh;
+  min-height: 30dvh;
   background-color: $jetblack;
+  padding: 2rem;
 }

@@ -1,8 +1,63 @@
+@font-face {
+  font-family: "Albert Sans";
+  src: url("../assets/AlbertSans-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bell MT";
+  src: url("../assets/Bell MT Regular.otf") format("opentype");
+}
 .gallery {
   display: flex;
-  min-height: 100vh;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
   padding: 2rem;
+  background-color: #1a1a1a;
+  margin-block: 4vw;
+  overflow-x: auto;
+}
+.gallery h1 {
+  margin-bottom: 4rem;
+  color: #ede6dd;
+  font-family: "Bell MT", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 100;
+  margin-bottom: 1rem;
+}
+.gallery .image-grid {
+  width: 200%;
+  height: 29%;
+  display: flex;
+  align-items: flex-start;
+  gap: 1vw;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.gallery .image-grid img {
+  height: 100%;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    flex-direction: column;
+    height: 100dvh;
+    overflow: scroll;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+  }
+  .gallery .image-grid {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .gallery .image-grid img {
+    width: 100%;
+    height: auto;
+  }
 }/*# sourceMappingURL=Gallary.css.map */

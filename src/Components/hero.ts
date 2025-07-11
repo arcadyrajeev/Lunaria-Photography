@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const images = Object.values(
-  import.meta.glob<string>("/src/assets/Heroslide/*.webp", {
+  import.meta.glob<string>("/src/assets/Heroslides/*.webp", {
     eager: true,
     import: "default",
   })
