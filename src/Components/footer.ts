@@ -1,6 +1,6 @@
 export function Footer() {
   return `
-    <header class="footer">
+    <header class="footer" id="footer">
       <h1>Lunaria Photography</h1>
       <nav>
         <a href="#gallery">Gallery</a>

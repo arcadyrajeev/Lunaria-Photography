@@ -21,6 +21,10 @@ $offwhite: #ede6dd;
   src: url("../assets/Bell MT Regular.otf") format("opentype");
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 .gallery {
   display: flex;
   flex-direction: column;
@@ -29,25 +33,24 @@ $offwhite: #ede6dd;
   padding: 2rem;
   background-color: $jetblack;
   margin-block: 4vw;
-  overflow-x: auto;
 
   h1 {
-    margin-bottom: 4rem;
+    margin-block: 3rem;
     color: $offwhite;
     font-family: "Bell MT", serif;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 100;
-    margin-bottom: 1rem;
   }
 
   .image-grid {
-    width: 200%;
-    height: 29%;
+    width: 300vw;
+    height: 32%;
     display: flex;
     align-items: flex-start;
     gap: 1vw;
     flex-direction: row;
     flex-wrap: wrap;
+    scroll-behavior: smooth;
 
     img {
       height: 100%;
@@ -60,8 +63,9 @@ $offwhite: #ede6dd;
 
 @media (max-width: 600px) {
   .gallery {
+    margin-bottom: 20vw;
     flex-direction: column;
-    height: 100dvh;
+    height: 80vh;
     overflow: scroll;
     justify-content: flex-start;
     align-items: center;

@@ -264,11 +264,17 @@ body {
           margin-block: 2rem;
         }
 
+        p {
+          font-size: 3rem;
+          font-weight: 800;
+          color: $offwhite;
+        }
+
         ul {
           margin-top: 15vh;
           color: $offwhite;
           font-size: small;
-          line-height: 2vw;
+          line-height: clamp(2rem, 4vw, 3rem);
         }
       }
     }

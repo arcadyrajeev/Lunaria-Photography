@@ -1,6 +1,6 @@
 export function About() {
   return `
-    <header class="about">
+    <header class="about" id="about">
       <h1>Lunaria Photography</h1>
       <nav>
         <a href="#gallery">Gallery</a>

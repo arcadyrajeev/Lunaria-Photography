@@ -71,13 +71,13 @@ export function Navbar() {
         <img src='/Logo-hero.svg' alt="Lunaria Photography Logo">
       </div>
       <div class="nav-links">
-        <a href="#home">Home</a>
+        <a href="#main-content">Home</a>
         <a href="#pricing">Pricing</a>
         <a href="#gallery">Gallery</a>
         <a href="#about">About</a>
       </div>
       <div class="button">
-          <a href="#contact">Contact</a>
+          <a href="#footer">Contact</a>
       </div>
     </div>
   `;

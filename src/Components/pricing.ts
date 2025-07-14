@@ -1,6 +1,6 @@
 export function Pricing() {
   return `
-    <div class="pricing">
+    <div class="pricing" id="pricing">
         <h1>Pricing</h1>
         <div class="pricing-container">
         <img src="/flower-lav.svg" alt="Lunaria Photography Pricing Image" >
