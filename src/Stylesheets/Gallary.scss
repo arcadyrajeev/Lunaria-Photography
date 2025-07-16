@@ -28,9 +28,10 @@ $offwhite: #ede6dd;
 .gallery {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: min(100vh, 90vw);
   width: 100%;
   padding: 2rem;
+  overflow: hidden;
   background-color: $jetblack;
   margin-block: 4vw;
 
@@ -43,8 +44,8 @@ $offwhite: #ede6dd;
   }
 
   .image-grid {
-    width: 300vw;
-    height: 32%;
+    width: max(280vw, 240rem);
+    height: min(29%, 20rem);
     display: flex;
     align-items: flex-start;
     gap: 1vw;
@@ -82,5 +83,11 @@ $offwhite: #ede6dd;
         height: auto;
       }
     }
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 600px) {
+  .gallery {
+    overflow: auto;
   }
 }

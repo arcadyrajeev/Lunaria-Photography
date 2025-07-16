@@ -239,13 +239,12 @@ body {
   align-items: center;
   padding-inline: clamp(2rem, 4vw, 4rem);
   justify-content: space-around;
-  min-height: 100dvh;
+  height: min(120vw, 100vh);
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: clamp(1rem, 2vw, 1.5rem);
 
   .image-container {
     width: 50vw;
-    max-width: 600px;
     height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -256,20 +255,20 @@ body {
     .image-card {
       display: flex;
       position: absolute;
-      width: clamp(10rem, 18vw, 18rem);
-      height: clamp(14rem, 24vw, 24rem);
+      width: clamp(15rem, 18vw, 18rem);
+      height: min(40vw, 50vh);
       border-radius: 2rem;
       will-change: opacity, transform;
     }
 
     #card1 {
       z-index: 1;
-      transform: translateX(-12vw) translateY(-3vw);
+      transform: translateX(-12rem) translateY(-3vw);
       background-color: #26483e;
     }
     #card2 {
       z-index: 1;
-      transform: translateX(12vw);
+      transform: translateX(12rem);
       background-color: #a293b2;
     }
     #card3 {
@@ -287,9 +286,11 @@ body {
     flex-direction: column;
 
     p {
-      margin-bottom: 1rem;
-      color: $jetblack;
-      font-size: clamp(0.9rem, 2vw, 1rem);
+      font-family: "Albert Sans";
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #333;
+      margin-block: 1rem;
     }
 
     h2 {
@@ -303,7 +304,7 @@ body {
 }
 
 .pricing {
-  width: 98%;
+  width: 98vw;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -311,7 +312,6 @@ body {
   border-radius: 2rem;
   padding-block: 1.5rem;
   background-color: $offwhite;
-
   min-height: 90dvh;
 
   h1 {
@@ -326,10 +326,9 @@ body {
   .pricing-container {
     display: flex;
     width: 100%;
-    justify-content: space-between;
     padding-inline: clamp(1rem, 5vw, 5vw);
     margin-top: 3vh;
-    gap: 2rem;
+    gap: 2vw;
 
     img {
       width: 20%;
@@ -338,10 +337,10 @@ body {
 
     .tier {
       display: flex;
-      min-height: 60vh;
+      height: min(50vw, 28rem);
       flex-direction: column;
-      width: clamp(12rem, 18%, 20rem);
-      padding-block: 2rem;
+      width: 30vw;
+      padding-block: clamp(2rem, 3vw, 6rem);
       border-radius: 6rem;
       border: solid 0.3rem $jetblack;
       align-items: center;
@@ -350,13 +349,13 @@ body {
         text-align: center;
         font-family: "Bell MT", serif;
         color: $jetblack;
-        font-size: clamp(1.5rem, 4vw, 1.8rem);
+        font-size: clamp(1.2rem, 2vw, 3rem);
         font-weight: 100;
-        margin-block: 2rem;
+        margin-block: clamp(1rem, 2vw, 1.5rem);
       }
 
       ul {
-        margin-top: 5vh;
+        margin-top: clam(3rem, 10vw, 5rem);
         color: $jetblack;
         font-size: clamp(0.8rem, 1.5vw, 1rem);
         line-height: 1.6;
@@ -367,8 +366,56 @@ body {
 
 .about {
   display: flex;
-  min-height: 100dvh;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  //height: max(30vw, 80vh);
+  height: max-content;
+  align-items: center;
+  justify-content: center;
+  margin-block: 4rem;
   padding: 2rem;
+
+  h1 {
+    margin-block: 3rem;
+    color: $jetblack;
+    font-family: "Bell MT", serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 100;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    .image-block {
+      width: max(40vw, 20rem);
+      height: 50vw;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .text-block {
+      width: max(40vw, 20rem);
+
+      height: auto;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        font-family: "Albert Sans";
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #333;
+        margin-block: 1rem;
+      }
+    }
+  }
 }
 
 .footer {

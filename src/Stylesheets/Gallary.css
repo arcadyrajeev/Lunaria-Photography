@@ -13,9 +13,10 @@
 .gallery {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: min(100vh, 90vw);
   width: 100%;
   padding: 2rem;
+  overflow: hidden;
   background-color: #1a1a1a;
   margin-block: 4vw;
 }
@@ -27,8 +28,8 @@
   font-weight: 100;
 }
 .gallery .image-grid {
-  width: 300vw;
-  height: 32%;
+  width: max(280vw, 240rem);
+  height: min(29%, 20rem);
   display: flex;
   align-items: flex-start;
   gap: 1vw;
@@ -63,5 +64,10 @@
   .gallery .image-grid img {
     width: 100%;
     height: auto;
+  }
+}
+@media (max-width: 1024px) and (min-width: 600px) {
+  .gallery {
+    overflow: auto;
   }
 }/*# sourceMappingURL=Gallary.css.map */
