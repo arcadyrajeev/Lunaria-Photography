@@ -76,7 +76,7 @@ export function Hero() {
   return `
     <div class="hero" id="main-content" >
       <div class="slideshow">
-        <img src="" id="hero-image" alt="hero slideshow image" />
+        <img src="" id="hero-image" alt="hero slideshow image"  loading="lazy"/>
       </div>
       <div class="ctrl" id="prev"><img src="/arrow-prev.svg" /></div>
       <div class="ctrl" id="next"><img src="/arrow-next.svg" /></div>

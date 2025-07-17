@@ -51,7 +51,7 @@ export function Gallery() {
         ${images
           .map(
             (src, index) =>
-              `<img src="${src}" alt="Gallery Image ${index + 1}" class="gallery-image" data-index="${index}">`
+              `<img src="${src}" alt="Gallery Image ${index + 1}" class="gallery-image" data-index="${index}" loading="lazy">`
           )
           .join("")}
       </div>
