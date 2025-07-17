@@ -241,4 +241,7 @@ body {
     transform: none;
     transition: none;
   }
+  .footer .footer-container {
+    flex-direction: column-reverse;
+  }
 }/*# sourceMappingURL=mobile.css.map */

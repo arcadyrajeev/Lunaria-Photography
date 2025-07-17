@@ -297,4 +297,10 @@ body {
       }
     }
   }
+
+  .footer {
+    .footer-container {
+      flex-direction: column-reverse;
+    }
+  }
 }
