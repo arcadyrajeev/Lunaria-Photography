@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Load images
 const images = Object.values(
   import.meta.glob<string>("/src/assets/Heroslides/*.webp", {
     eager: true,
@@ -11,41 +12,39 @@ const images = Object.values(
 );
 
 let currentIndex = 0;
+let slideWidth = window.innerWidth;
 
-function showSlide(index: number) {
-  const img = document.getElementById("hero-image") as HTMLImageElement | null;
-  if (!img) return;
-  img.src = images[index];
+function createSlides(): string {
+  return images
+    .map((src) => `<img src="${src}" class="slide" alt="Slideshow image" />`)
+    .join("");
 }
 
-function startSlideshow(interval = 15000) {
-  if (images.length === 0) return;
-  showSlide(currentIndex);
+function updateSlidePosition() {
+  const track = document.querySelector(".slideshow-track") as HTMLElement;
+  if (!track) return;
 
+  gsap.to(track, {
+    x: -currentIndex * slideWidth,
+    duration: 1,
+    ease: "power2.out",
+  });
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateSlidePosition();
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateSlidePosition();
+}
+
+function startAutoSlide(delay = 15000) {
   setInterval(() => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showSlide(currentIndex);
-  }, interval);
-}
-
-function animateButtonsOnScroll() {
-  const buttons = document.querySelectorAll(".ctrl");
-  if (!buttons) return;
-
-  const scrollConfig = {
-    trigger: document.body,
-    start: "top top",
-    end: "500vh top",
-    scrub: true,
-  };
-
-  for (const button of buttons) {
-    gsap.to(button, {
-      opacity: 0,
-      ease: "power2.out",
-      scrollTrigger: scrollConfig,
-    });
-  }
+    nextSlide(); // Auto-increments index
+  }, delay);
 }
 
 function setupHeroControls() {
@@ -55,32 +54,60 @@ function setupHeroControls() {
   if (!prevButton || !nextButton) return;
 
   prevButton.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showSlide(currentIndex);
+    prevSlide(); // Manual nav, same index tracker
   });
 
   nextButton.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showSlide(currentIndex);
+    nextSlide();
   });
 }
+
+function animateButtonsOnScroll() {
+  const buttons = document.querySelectorAll(".ctrl");
+
+  const scrollConfig = {
+    trigger: document.body,
+    start: "top top",
+    end: "500vh top",
+    scrub: true,
+  };
+
+  buttons.forEach((button) => {
+    gsap.to(button, {
+      opacity: 0,
+      ease: "power2.out",
+      scrollTrigger: scrollConfig,
+    });
+  });
+}
+
 export function Hero() {
-  // Important: You will inject markup manually, so Hero() can still be used inside template literals
-  // If you prefer auto-append instead, we can adjust.
   requestAnimationFrame(() => {
-    startSlideshow();
-    animateButtonsOnScroll();
+    const track = document.querySelector(".slideshow-track") as HTMLElement;
+    if (track) {
+      track.style.width = `${images.length * 100}vw`;
+    }
+
+    updateSlidePosition(); // Initial
     setupHeroControls();
+    animateButtonsOnScroll();
+    startAutoSlide(); // 🔥 Always active, never paused
+
+    window.addEventListener("resize", () => {
+      slideWidth = window.innerWidth;
+      updateSlidePosition();
+    });
   });
 
   return `
-    <div class="hero" id="main-content" >
-      <div class="slideshow">
-        <img src="" id="hero-image" alt="hero slideshow image"  loading="lazy"/>
+    <div class="hero" id="main-content">
+      <div class="slideshow-container">
+        <div class="slideshow-track">
+          ${createSlides()}
+        </div>
       </div>
       <div class="ctrl" id="prev"><img src="/arrow-prev.svg" /></div>
       <div class="ctrl" id="next"><img src="/arrow-next.svg" /></div>
-
     </div>
   `;
 }
