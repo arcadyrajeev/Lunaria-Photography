@@ -62,6 +62,47 @@ $offwhite: #ede6dd;
   }
 }
 
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+}
+
+.fullscreen-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.fullscreen-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
 @media (max-width: 600px) {
   .gallery {
     margin-bottom: 20vw;
