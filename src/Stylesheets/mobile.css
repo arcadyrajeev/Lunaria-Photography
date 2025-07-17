@@ -233,4 +233,12 @@ body {
   .about .content {
     flex-direction: column-reverse;
   }
+  .location {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+  }
+  .location .findus-text cta-button {
+    transform: none;
+    transition: none;
+  }
 }/*# sourceMappingURL=mobile.css.map */

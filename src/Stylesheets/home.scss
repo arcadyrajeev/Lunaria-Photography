@@ -437,7 +437,7 @@ body {
   .findus-text {
     display: flex;
     flex-direction: column;
-    width: max(26%, 25rem);
+    width: max(26%, 22rem);
 
     h2 {
       font-family: "Bell MT", serif;
@@ -487,8 +487,10 @@ body {
   }
   .map-container {
     display: flex;
-    width: max(60%, 25rem);
-    height: max(25vw, 25rem);
+    width: max(60%, 22rem);
+    height: max(25vw, 24rem);
+    justify-content: center;
+    align-items: center;
     border-radius: 1rem;
     overflow: hidden;
   }
