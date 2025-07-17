@@ -86,8 +86,14 @@ $offwhite: #ede6dd;
   }
 }
 
-@media (max-width: 1024px) and (min-width: 600px) {
+@media (max-width: 1140px) and (min-width: 600px) {
   .gallery {
+    padding-top: clamp(5rem, 6vw, 6rem);
+    height: 100vh;
     overflow: auto;
+
+    .image-grid {
+      width: 380vw;
+    }
   }
 }

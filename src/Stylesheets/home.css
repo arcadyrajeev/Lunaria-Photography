@@ -209,7 +209,7 @@ p {
 }
 .intro .image-container {
   width: 50vw;
-  height: auto;
+  height: max(40vw, 35rem);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -249,7 +249,7 @@ p {
   background-color: #b46b0a;
 }
 .intro .text-card {
-  max-width: 30rem;
+  width: max(30vw, 30rem);
   padding-right: clamp(1rem, 3vw, 4rem);
   text-align: justify;
   display: flex;
@@ -291,10 +291,10 @@ p {
 }
 .pricing .pricing-container .tier {
   display: flex;
-  height: min(50vw, 28rem);
+  height: max(30vw, 30rem);
   flex-direction: column;
   justify-content: space-around;
-  width: 30vw;
+  width: max(30vw, 30rem);
   padding-block: clamp(2rem, 3vw, 6rem);
   border-radius: 6rem;
   border: solid 0.3rem #1a1a1a;
