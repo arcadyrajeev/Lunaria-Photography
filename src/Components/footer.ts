@@ -3,7 +3,7 @@ export function Footer() {
     <section class="footer" id="footer">
       <div class="footer-container">
         <div class="site-map">
-          <a href="#navbar">Home</a>
+          <a href="#main-content">Home</a>
           <a href="#pricing">Pricing</a>
           <a href="#gallery">Gallery</a>
           <a href="#about">About</a>
