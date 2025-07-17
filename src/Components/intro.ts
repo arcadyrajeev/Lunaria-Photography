@@ -10,7 +10,7 @@ export function animateIntroCards() {
   // Desktop
   mm.add("(min-width: 1024px)", () => {
     cards.forEach((card, index) => {
-      const endOffset = 50 + index * 20; // each card scrolls further = slower animation
+      const endOffset = 40 + index * 20; // each card scrolls further = slower animation
 
       gsap.from(card, {
         y: 150,
@@ -52,9 +52,9 @@ export function Intro() {
   return `
     <div class="intro">
       <div class="image-container">
-        <div class="image-card" id="card1"></div>
-        <div class="image-card" id="card2"></div>
-        <div class="image-card" id="card3"></div>
+        <div class="image-card" id="card1"><img src="/intro/3.webp"></div>
+        <div class="image-card" id="card2"><img src="/intro/2.webp"></div>
+        <div class="image-card" id="card3"><img src="/intro/1.webp"></div>
       </div>
       <div class="text-card">
         <p>At</p>

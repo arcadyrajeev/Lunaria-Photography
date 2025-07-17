@@ -182,13 +182,28 @@ body {
   z-index: 1;
 }
 
+h2 {
+  font-family: "Bell MT", serif;
+  color: #1a1a1a;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 500;
+}
+
+p {
+  font-family: "Albert Sans";
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+  margin-block: 1rem;
+}
+
 .intro {
   display: flex;
   width: 100%;
   align-items: center;
   padding-inline: clamp(2rem, 4vw, 4rem);
   justify-content: space-around;
-  height: min(120vw, 100vh);
+  height: min(120vw, 85vh);
   flex-wrap: wrap;
   gap: clamp(1rem, 2vw, 1.5rem);
 }
@@ -207,7 +222,16 @@ body {
   width: clamp(15rem, 18vw, 18rem);
   height: min(40vw, 50vh);
   border-radius: 2rem;
+  overflow: hidden;
   will-change: opacity, transform;
+}
+.intro .image-container .image-card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .intro .image-container #card1 {
   z-index: 1;
@@ -230,20 +254,6 @@ body {
   text-align: justify;
   display: flex;
   flex-direction: column;
-}
-.intro .text-card p {
-  font-family: "Albert Sans";
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: #333;
-  margin-block: 1rem;
-}
-.intro .text-card h2 {
-  font-family: "Bell mt", serif;
-  font-size: clamp(1.5rem, 4vw, 1.8rem);
-  font-weight: 100;
-  color: #26483e;
-  margin-bottom: 1vw;
 }
 
 .pricing {
@@ -280,6 +290,7 @@ body {
   display: flex;
   height: min(50vw, 28rem);
   flex-direction: column;
+  justify-content: space-around;
   width: 30vw;
   padding-block: clamp(2rem, 3vw, 6rem);
   border-radius: 6rem;
@@ -287,20 +298,15 @@ body {
   align-items: center;
 }
 .pricing .pricing-container .tier h2 {
-  text-align: center;
-  font-family: "Bell MT", serif;
-  color: #1a1a1a;
-  font-size: clamp(1.2rem, 2vw, 3rem);
-  font-weight: 100;
-  margin-block: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1.4rem, 4vw, 2rem);
 }
 .pricing .pricing-container .tier p {
   font-family: "Albert Sans";
+  color: #26483e;
   font-weight: 800;
   font-size: clamp(1.2rem, 2vw, 3rem);
 }
 .pricing .pricing-container .tier ul {
-  margin-top: clamp(3rem, 6vw, 5rem);
   color: #1a1a1a;
   font-size: clamp(0.8rem, 1.5vw, 1rem);
   line-height: 1.6;
@@ -346,13 +352,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-.about .content .text-block p {
-  font-family: "Albert Sans";
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: #333;
-  margin-block: 1rem;
-}
 
 .footer {
   display: flex;
@@ -365,55 +364,33 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  height: auto;
   padding: 2rem;
   gap: 4rem;
 }
 .location .findus-text {
   display: flex;
   flex-direction: column;
-  width: max(26%, 22rem);
-}
-.location .findus-text h2 {
-  font-family: "Bell MT", serif;
-  color: #1a1a1a;
-  font-size: clamp(2rem, 2vw, 3rem);
-  font-weight: 500;
-}
-.location .findus-text p {
-  font-family: "Albert Sans";
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: #333;
-  margin-block: 1rem;
+  width: 100%;
+  max-width: 480px;
+  text-align: justify;
 }
 .location .findus-text .cta-button {
-  margin-block: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: max(20vw, 15rem);
-  padding-inline: max(2rem, 2vw);
-  padding-block: max(1rem, 1vw);
-  border-radius: 3rem;
-  background-color: #26483e;
-  cursor: pointer;
-  transition: transform 0.28s ease-in-out, background-color 0.2s ease-in-out;
-}
-.location .findus-text .cta-button:hover {
-  background-color: #a293b2;
-  transform: translateX(2rem);
-}
-.location .findus-text .cta-button:hover a {
-  color: #1a1a1a;
-}
-.location .findus-text .cta-button a {
-  text-decoration: none;
-  color: #ede6dd;
-  font-weight: 700;
+  margin: 1.5rem auto 0;
 }
 .location .map-container {
+  width: 100%;
+  max-width: 600px;
+  height: clamp(15rem, 25vw, 400px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.map-container {
   display: flex;
   width: max(60%, 22rem);
   height: max(25vw, 15rem);
@@ -421,4 +398,39 @@ body {
   align-items: center;
   border-radius: 1rem;
   overflow: hidden;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: max(10vw, 8rem);
+}
+
+.cta-button {
+  margin-block: 2rem;
+  display: flex;
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+  width: max(20vw, 15rem);
+  padding-inline: max(2rem, 2vw);
+  padding-block: max(1rem, 1vw);
+  border-radius: 3rem;
+  background-color: #26483e;
+  will-change: opacity, transform;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.cta-button:hover {
+  background-color: #a293b2;
+}
+.cta-button:hover a {
+  color: #1a1a1a;
+}
+.cta-button a {
+  text-decoration: none;
+  color: #ede6dd;
+  font-weight: 700;
 }/*# sourceMappingURL=home.css.map */

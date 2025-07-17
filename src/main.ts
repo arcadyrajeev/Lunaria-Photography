@@ -10,10 +10,12 @@ import { Pricing } from "./Components/pricing";
 import { Intro } from "./Components/intro";
 import { Location } from "./Components/location";
 import { initMap } from "./utils/mapInit";
+import { Cta } from "./Components/cta-section";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   ${Navbar()}
   ${Hero()}
+  ${Cta()}
   ${Intro()}
   ${Gallery()}
   ${Pricing()}

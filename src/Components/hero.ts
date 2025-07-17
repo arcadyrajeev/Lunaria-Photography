@@ -80,6 +80,7 @@ export function Hero() {
       </div>
       <div class="ctrl" id="prev"><img src="/arrow-prev.svg" /></div>
       <div class="ctrl" id="next"><img src="/arrow-next.svg" /></div>
+
     </div>
   `;
 }

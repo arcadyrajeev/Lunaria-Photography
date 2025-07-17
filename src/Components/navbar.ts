@@ -10,6 +10,9 @@ export function AnimateLogoOnScroll() {
   const navbar = document.querySelector(".navbar");
   const navLinks = document.querySelectorAll(".nav-links");
   const mm = gsap.matchMedia();
+  let margin = window.innerWidth < 1024 ? "25vw" : "40vw";
+
+  if (!logo || !navbar || !mainContent || !navLinks.length) return;
 
   if (!logo) return;
 
@@ -37,7 +40,7 @@ export function AnimateLogoOnScroll() {
   });
 
   gsap.to(navLinks, {
-    marginLeft: "40%",
+    marginLeft: `${margin}`,
     gap: "2rem",
     ease: "power2.out",
     scrollTrigger: scrollConfig,
@@ -45,7 +48,7 @@ export function AnimateLogoOnScroll() {
 
   mm.add("(max-width: 600px)", () => {
     gsap.to(logo, {
-      scale: 0.5,
+      scale: 0.6,
       y: 0,
       x: -45,
       transformOrigin: "left center",
