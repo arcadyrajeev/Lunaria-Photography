@@ -244,4 +244,8 @@ body {
   .footer .footer-container {
     flex-direction: column-reverse;
   }
+  .footer .footer-container .site-map {
+    padding: 0%;
+    align-items: center;
+  }
 }/*# sourceMappingURL=mobile.css.map */

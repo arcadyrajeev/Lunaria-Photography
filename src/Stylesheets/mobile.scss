@@ -301,6 +301,10 @@ body {
   .footer {
     .footer-container {
       flex-direction: column-reverse;
+      .site-map {
+        padding: 0%;
+        align-items: center;
+      }
     }
   }
 }

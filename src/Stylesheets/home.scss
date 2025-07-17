@@ -527,11 +527,13 @@ p {
     align-items: center;
     width: 100%;
 
-    justify-content: space-around;
+    justify-content: space-between;
 
     .site-map {
       display: flex;
       flex-direction: column;
+      width: max(30%, 20rem);
+      padding-left: 4rem;
       margin-top: 3rem;
 
       a {
@@ -639,7 +641,8 @@ p {
 
   .copyright {
     display: flex;
-    padding-inline: 2rem;
+
+    padding: 2rem;
     justify-content: space-between;
 
     #creator {

@@ -48,7 +48,7 @@ export function AnimateLogoOnScroll() {
 
   mm.add("(max-width: 600px)", () => {
     gsap.to(logo, {
-      scale: 0.6,
+      scale: 0.55,
       y: 0,
       x: -45,
       transformOrigin: "left center",

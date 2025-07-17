@@ -456,11 +456,13 @@ p {
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .footer .footer-container .site-map {
   display: flex;
   flex-direction: column;
+  width: max(30%, 20rem);
+  padding-left: 4rem;
   margin-top: 3rem;
 }
 .footer .footer-container .site-map a {
@@ -550,7 +552,7 @@ p {
 }
 .footer .copyright {
   display: flex;
-  padding-inline: 2rem;
+  padding: 2rem;
   justify-content: space-between;
 }
 .footer .copyright #creator {
