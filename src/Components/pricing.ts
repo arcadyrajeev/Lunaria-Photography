@@ -6,7 +6,7 @@ export function Pricing() {
         <img src="/flower-lav.svg" alt="Lunaria Photography Pricing Image" >
         <div class="tier">
             <h2>Basic Package</h2>
-            <p>$100</p>
+            <p>$300</p>
             <ul>
                 <li>1 Hour Session</li>
                 <li>10 Edited Photos</li>
@@ -15,7 +15,7 @@ export function Pricing() {
         </div>
         <div class="tier">
             <h2>Standard Package</h2>
-            <p>$200</p>
+            <p>$500</p>
             <ul>
                 <li>2 Hour Session</li>
                 <li>20 Edited Photos</li>
@@ -25,7 +25,7 @@ export function Pricing() {
         </div>
         <div class="tier">
             <h2>Premium Package</h2>
-            <p>$300</p>
+            <p>$800</p>
             <ul>
                 <li>3 Hour Session</li>
                 <li>30 Edited Photos</li>

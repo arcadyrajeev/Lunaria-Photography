@@ -294,8 +294,13 @@ body {
   font-weight: 100;
   margin-block: clamp(1rem, 2vw, 1.5rem);
 }
+.pricing .pricing-container .tier p {
+  font-family: "Albert Sans";
+  font-weight: 800;
+  font-size: clamp(1.2rem, 2vw, 3rem);
+}
 .pricing .pricing-container .tier ul {
-  margin-top: clam(3rem, 10vw, 5rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
   color: #1a1a1a;
   font-size: clamp(0.8rem, 1.5vw, 1rem);
   line-height: 1.6;
@@ -411,7 +416,7 @@ body {
 .location .map-container {
   display: flex;
   width: max(60%, 22rem);
-  height: max(25vw, 24rem);
+  height: max(25vw, 15rem);
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
