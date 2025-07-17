@@ -230,4 +230,7 @@ body {
     font-size: small;
     line-height: clamp(2rem, 4vw, 3rem);
   }
+  .about .content {
+    flex-direction: column-reverse;
+  }
 }/*# sourceMappingURL=mobile.css.map */

@@ -395,7 +395,7 @@ body {
 
     .image-block {
       width: max(40vw, 20rem);
-      height: 50vw;
+      height: max(30vw, 28rem);
       display: flex;
       flex-direction: column;
     }
@@ -423,4 +423,73 @@ body {
   min-height: 30dvh;
   background-color: $jetblack;
   padding: 2rem;
+}
+
+.location {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  gap: 4rem;
+
+  .findus-text {
+    display: flex;
+    flex-direction: column;
+    width: max(26%, 25rem);
+
+    h2 {
+      font-family: "Bell MT", serif;
+      color: $jetblack;
+      font-size: clamp(2rem, 2vw, 3rem);
+      font-weight: 500;
+    }
+
+    p {
+      font-family: "Albert Sans";
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #333;
+      margin-block: 1rem;
+    }
+
+    .cta-button {
+      margin-block: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: max(20vw, 15rem);
+      padding-inline: max(2rem, 2vw);
+      padding-block: max(1rem, 1vw);
+      border-radius: 3rem;
+      background-color: #26483e;
+      cursor: pointer;
+      transition:
+        transform 0.28s ease-in-out,
+        background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $secondary-color;
+        transform: translateX(2rem);
+      }
+
+      &:hover a {
+        color: $jetblack;
+      }
+
+      a {
+        text-decoration: none;
+        color: $offwhite;
+        font-weight: 700;
+      }
+    }
+  }
+  .map-container {
+    display: flex;
+    width: max(60%, 25rem);
+    height: max(25vw, 25rem);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
 }

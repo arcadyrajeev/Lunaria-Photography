@@ -8,6 +8,8 @@ import "./Stylesheets/Gallary.css";
 import "./Stylesheets/mobile.css";
 import { Pricing } from "./Components/pricing";
 import { Intro } from "./Components/intro";
+import { Location } from "./Components/location";
+import { initMap } from "./utils/mapInit";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   ${Navbar()}
@@ -16,5 +18,10 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   ${Gallery()}
   ${Pricing()}
   ${About()}
+  ${Location()}
   ${Footer()}
 `;
+
+setTimeout(() => {
+  initMap();
+}, 100); // slight delay to ensure #map is in DOM
