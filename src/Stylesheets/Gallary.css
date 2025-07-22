@@ -145,7 +145,10 @@
     flex-direction: column;
     gap: 1rem;
   }
-  .gallery .image-grid img {
+  .gallery .image-grid .img-container {
+    width: 100%;
+  }
+  .gallery .image-grid .img-container img {
     width: 100%;
     height: auto;
   }
