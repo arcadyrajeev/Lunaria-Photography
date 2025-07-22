@@ -12,6 +12,24 @@ const images = Object.values(
   })
 );
 
+const fullImages = import.meta.glob<string>("/src/assets/images/*.webp", {
+  eager: true,
+  import: "default",
+});
+
+function getFileName(path: string): string {
+  return path.split("/").pop() || "";
+}
+
+function getFullImageUrl(filename: string): string | null {
+  for (const path in fullImages) {
+    if (path.endsWith(filename)) {
+      return fullImages[path];
+    }
+  }
+  return null;
+}
+
 function setupImageViewer() {
   const overlay = document.getElementById("fullscreen-overlay") as HTMLElement;
   const fullImage = document.getElementById(
@@ -22,13 +40,13 @@ function setupImageViewer() {
   document.querySelectorAll(".gallery-image").forEach((img) => {
     img.addEventListener("click", () => {
       const thumbSrc = (img as HTMLImageElement).src;
+      const fileName = getFileName(thumbSrc); // same helper from before
+      const fullSrc = getFullImageUrl(fileName);
 
-      // Extract the filename only
-      const fileName = thumbSrc.split("/").pop();
-
-      // Point to public/gallery folder (where full images are)
-      const fullSrc = `/src/assets/images/${fileName}`;
-      console.log(fullSrc);
+      if (!fullSrc) {
+        console.error(`Full image not found for ${fileName}`);
+        return;
+      }
 
       fullImage.src = fullSrc;
       overlay.classList.add("active");
