@@ -46,6 +46,7 @@ function setupImageViewer() {
     img.addEventListener("click", () => {
       const thumbSrc = (img as HTMLImageElement).src;
       const fileName = getFileName(thumbSrc); // same helper from before
+      console.log(fileName);
       const fullSrc = pullImage(fileName);
 
       fullImage.src = fullSrc;
