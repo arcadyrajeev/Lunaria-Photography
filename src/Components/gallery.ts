@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Dynamically import all images from the folder
 const images = Object.values(
-  import.meta.glob<string>("/src/assets/Gallery/*.webp", {
+  import.meta.glob<string>("/src/assets/Gallery/thumb/*.webp", {
     eager: true,
     import: "default",
   })
@@ -21,8 +21,12 @@ function setupImageViewer() {
 
   document.querySelectorAll(".gallery-image").forEach((img) => {
     img.addEventListener("click", () => {
-      const src = (img as HTMLImageElement).src;
-      fullImage.src = src;
+      const thumbSrc = (img as HTMLImageElement).src;
+
+      // Convert thumbnail path to full-size path
+      const fullSrc = thumbSrc.replace("/thumb/", "/full/");
+
+      fullImage.src = fullSrc;
       overlay.classList.add("active");
     });
   });
@@ -33,57 +37,96 @@ function setupImageViewer() {
   });
 }
 
-function animateGalleryImages() {
-  const mm = gsap.matchMedia();
+function animateImages() {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#gallery",
+      start: "top-=100 top", // trigger after 100px scroll
+      end: "top+=200 top", // animation range
+    },
+  });
 
-  mm.add("(min-width: 1024px)", () => {
-    const imageGrid = document.querySelector(".image-grid");
-    const gallery = document.querySelector(".gallery");
+  const imageContainers = document.querySelectorAll(".img-container");
 
-    if (!imageGrid || !gallery) return;
-
-    const scrollWidth = imageGrid.scrollWidth;
-    const scrollDistance = scrollWidth - window.innerWidth;
-
-    gsap.to(imageGrid, {
-      x: -scrollDistance,
-      ease: "none",
-      scrollTrigger: {
-        trigger: gallery,
-        start: "top top",
-        end: `+=${scrollDistance}`,
-        pin: true,
-        scrub: 0.5, // smooth scroll binding
-        anticipatePin: 1,
-      },
-    });
+  tl.from(imageContainers, {
+    opacity: 0,
+    y: 60,
+    stagger: {
+      each: 0.1, // adjust delay between each image
+      from: "start", // can also use "center" or "edges"
+    },
+    duration: 1,
+    ease: "power2.out",
   });
 }
 
 export function Gallery() {
   setTimeout(() => {
-    animateGalleryImages();
     setupImageViewer();
+    animateImages(); // <-- Call the animation timeline here
   }, 0); // delay ensures DOM is available
+
+  const total = images.length;
+  const partSize = Math.ceil(total / 4);
+  console.log(partSize, total);
+
+  const firstPart = images.slice(0, partSize);
+  const secondPart = images.slice(partSize, partSize * 2);
+  const thirdPart = images.slice(partSize * 2, partSize * 3);
+  const fourthPart = images.slice(partSize * 3, total);
 
   return `
     <div class="gallery" id="gallery">
       <h1 class="gallery-title">Gallery</h1>
       <div class="image-grid">
-        ${images
-          .map(
-            (src, index) =>
-              `<img src="${src}" alt="Gallery Image ${index + 1}" class="gallery-image" data-index="${index}" loading="lazy">`
-          )
-          .join("")}
+        <div class="column">
+          ${firstPart
+            .map(
+              (src, index) => `
+              <div class="img-container">
+                <img src="${src}" alt="Gallery Image ${index + 1}" class="gallery-image" data-index="${index}" loading="lazy" />
+              </div>`
+            )
+            .join("")}
+        </div>
+        <div class="column">
+          ${secondPart
+            .map(
+              (src, index) => `
+              <div class="img-container">
+                <img src="${src}" alt="Gallery Image ${index + 1 + partSize}" class="gallery-image" data-index="${index + partSize}" loading="lazy" />
+              </div>`
+            )
+            .join("")}
+        </div>
+        <div class="column">
+          ${thirdPart
+            .map(
+              (src, index) => `
+              <div class="img-container">
+                <img src="${src}" alt="Gallery Image ${index + 1 + partSize * 2}" class="gallery-image" data-index="${index + partSize * 2}" loading="lazy" />
+              </div>`
+            )
+            .join("")}
+        </div>
+
+        <div class="column">
+          ${fourthPart
+            .map(
+              (src, index) => `
+              <div class="img-container">
+                <img src="${src}" alt="Gallery Image ${index + 1 + partSize * 3}" class="gallery-image" data-index="${index + partSize * 2}" loading="lazy" />
+              </div>`
+            )
+            .join("")}
+        </div>
       </div>
     </div>
 
     <!-- Fullscreen viewer -->
-      <div class="fullscreen-overlay" id="fullscreen-overlay">
-        <button class="close-btn" id="close-btn">×</button>
-        <img id="fullscreen-image" />
-      </div>
+    <div class="fullscreen-overlay" id="fullscreen-overlay">
+      <button class="close-btn" id="close-btn">×</button>
+      <img id="fullscreen-image" />
     </div>
   `;
 }

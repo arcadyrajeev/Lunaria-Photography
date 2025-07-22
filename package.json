@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.10",
-    "gsap": "^3.13.0"
+    "gsap": "^3.13.0",
+    "sharp": "^0.34.3",
+    "sharp-cli": "^5.2.0"
   }
 }

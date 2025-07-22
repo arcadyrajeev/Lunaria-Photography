@@ -17,8 +17,8 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   ${Hero()}
   ${Cta()}
   ${Intro()}
-  ${Gallery()}
   ${Pricing()}
+  ${Gallery()}
   ${About()}
   ${Location()}
   ${Footer()}
