@@ -16,6 +16,25 @@ function getFileName(path: string): string {
   return path.split("/").pop() || "";
 }
 
+function pullImage(fileName: string): string {
+  const images = import.meta.glob<string>("/src/assets/full/*.webp", {
+    eager: true,
+    import: "default",
+  });
+
+  const path = `/src/assets/full/${fileName}`;
+  const image = images[path];
+
+  if (!image) {
+    console.warn(`Image not found: ${fileName}`);
+    return "";
+  } else {
+    console.log("It fucking worked!");
+  }
+
+  return image;
+}
+
 function setupImageViewer() {
   const overlay = document.getElementById("fullscreen-overlay") as HTMLElement;
   const fullImage = document.getElementById(
@@ -27,7 +46,7 @@ function setupImageViewer() {
     img.addEventListener("click", () => {
       const thumbSrc = (img as HTMLImageElement).src;
       const fileName = getFileName(thumbSrc); // same helper from before
-      const fullSrc = `/${fileName}`;
+      const fullSrc = pullImage(fileName);
 
       fullImage.src = fullSrc;
       overlay.classList.add("active");
