@@ -24,7 +24,10 @@ function setupImageViewer() {
       const thumbSrc = (img as HTMLImageElement).src;
 
       // Convert thumbnail path to full-size path
-      const fullSrc = thumbSrc.replace("/thumb/", "/full/");
+      const fullSrc = thumbSrc.replace(
+        "/src/assets/Gallery/thumb/",
+        "/gallery/"
+      );
 
       fullImage.src = fullSrc;
       overlay.classList.add("active");
