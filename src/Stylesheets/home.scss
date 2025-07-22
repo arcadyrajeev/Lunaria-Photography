@@ -262,7 +262,7 @@ p {
   gap: clamp(1rem, 2vw, 1.5rem);
 
   .image-container {
-    width: 50vw;
+    width: max(50vw, 35rem);
 
     height: max(40vw, 35rem);
     display: flex;
@@ -442,7 +442,8 @@ p {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 2rem;
+  height: fit-content;
+  padding: 4rem 2rem;
   gap: 4rem;
 
   .findus-text {
@@ -503,7 +504,8 @@ p {
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background-color: $secondary-color;
+    background-color: $offwhite;
+    border: $jetblack solid 0.1rem;
   }
 
   &:hover a {

@@ -209,7 +209,7 @@ p {
   gap: clamp(1rem, 2vw, 1.5rem);
 }
 .intro .image-container {
-  width: 50vw;
+  width: max(50vw, 35rem);
   height: max(40vw, 35rem);
   display: flex;
   flex-wrap: wrap;
@@ -374,7 +374,9 @@ p {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 2rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 4rem 2rem;
   gap: 4rem;
 }
 .location .findus-text {
@@ -432,7 +434,8 @@ p {
   transition: background-color 0.2s ease-in-out;
 }
 .cta-button:hover {
-  background-color: #a293b2;
+  background-color: #ede6dd;
+  border: #1a1a1a solid 0.1rem;
 }
 .cta-button:hover a {
   color: #1a1a1a;

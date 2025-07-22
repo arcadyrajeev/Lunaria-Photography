@@ -16,7 +16,8 @@
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 2rem;
+  padding-block: 2rem;
+  padding-inline: calc(0.2rem + 1vw);
   overflow: hidden;
   background-color: #1a1a1a;
   margin-block: 4vw;
@@ -42,8 +43,42 @@
   width: 23vw;
   height: -moz-fit-content;
   height: fit-content;
-  margin-bottom: 0.5rem;
+  margin-bottom: calc(0.4rem + 1vw);
   will-change: opacity, transform;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery .image-grid .img-container::after {
+  content: "VIEW IMAGE";
+  pointer-events: none;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Albert sans";
+  font-size: large;
+  font-weight: 800;
+  border-radius: 100%;
+  border-bottom-left-radius: 0;
+  bottom: 0;
+  left: 0%;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  padding-right: 20%;
+  padding-top: 10%;
+  transform: scale(0);
+  background-color: rgba(10, 10, 10, 0.6);
+  color: #ede6dd;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+  transform-origin: bottom left;
+}
+.gallery .image-grid .img-container:hover::after {
+  opacity: 1;
+  transform: scale(1);
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .gallery .image-grid .img-container img {
   height: auto;
