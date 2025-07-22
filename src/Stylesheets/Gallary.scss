@@ -68,7 +68,8 @@ $offwhite: #ede6dd;
         content: "VIEW IMAGE";
         pointer-events: none;
         position: absolute;
-        display: flex;
+        display: none;
+        visibility: hidden;
         align-items: center;
         justify-content: center;
         font-family: "Albert sans";
@@ -171,6 +172,7 @@ $offwhite: #ede6dd;
 
           &:hover::after {
             display: none;
+            visibility: hidden;
           }
         }
 
@@ -185,6 +187,8 @@ $offwhite: #ede6dd;
 
 @media (hover: hover) and (pointer: fine) {
   .img-container:hover::after {
+    display: flex;
+    visibility: visible;
     opacity: 1;
     transform: scale(1);
     border-top-left-radius: 0;
