@@ -45,10 +45,9 @@ function setupImageViewer() {
   document.querySelectorAll(".gallery-image").forEach((img) => {
     img.addEventListener("click", () => {
       const thumbSrc = (img as HTMLImageElement).src;
-      const fileName = getFileName(thumbSrc); // same helper from before
-      console.log(fileName);
-      const fullSrc = `/images/${fileName}`;
+      const fileName = getFileName(thumbSrc);
 
+      const fullSrc = `/images/${fileName}`;
       fullImage.src = fullSrc;
       overlay.classList.add("active");
     });
