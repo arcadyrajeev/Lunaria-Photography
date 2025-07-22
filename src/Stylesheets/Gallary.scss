@@ -94,13 +94,6 @@ $offwhite: #ede6dd;
         transform-origin: bottom left;
       }
 
-      &:hover::after {
-        opacity: 1;
-        transform: scale(1);
-        border-top-left-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-
       img {
         height: auto;
         width: 100%;
@@ -171,11 +164,30 @@ $offwhite: #ede6dd;
 
       .img-container {
         width: 100%;
+
+        &::after {
+          display: none;
+          transition: none;
+
+          &:hover::after {
+            display: none;
+          }
+        }
+
         img {
           width: 100%;
           height: auto;
         }
       }
     }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .img-container:hover::after {
+    opacity: 1;
+    transform: scale(1);
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
