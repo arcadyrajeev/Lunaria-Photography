@@ -27,7 +27,7 @@ function setupImageViewer() {
       const fileName = thumbSrc.split("/").pop();
 
       // Point to public/gallery folder (where full images are)
-      const fullSrc = `gallery/${fileName}`;
+      const fullSrc = `/gallery/${fileName}`;
       console.log(fullSrc);
 
       fullImage.src = fullSrc;
