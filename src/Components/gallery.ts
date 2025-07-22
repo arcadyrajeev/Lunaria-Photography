@@ -23,11 +23,11 @@ function setupImageViewer() {
     img.addEventListener("click", () => {
       const thumbSrc = (img as HTMLImageElement).src;
 
-      // Convert thumbnail path to full-size path
-      const fullSrc = thumbSrc.replace(
-        "/src/assets/Gallery/thumb/",
-        "/gallery/"
-      );
+      // Extract the filename only
+      const fileName = thumbSrc.split("/").pop();
+
+      // Point to public/gallery folder (where full images are)
+      const fullSrc = `/gallery/${fileName}`;
 
       fullImage.src = fullSrc;
       overlay.classList.add("active");
