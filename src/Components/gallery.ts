@@ -12,11 +12,6 @@ const images = Object.values(
   })
 );
 
-const fullImages = import.meta.glob<string>("/src/assets/images/*.webp", {
-  eager: true,
-  import: "default",
-});
-
 function getFileName(path: string): string {
   return path.split("/").pop() || "";
 }
@@ -41,7 +36,7 @@ function setupImageViewer() {
     img.addEventListener("click", () => {
       const thumbSrc = (img as HTMLImageElement).src;
       const fileName = getFileName(thumbSrc); // same helper from before
-      const fullSrc = getFullImageUrl(fileName);
+      const fullSrc = `/${fileName}`;
 
       if (!fullSrc) {
         console.error(`Full image not found for ${fileName}`);
