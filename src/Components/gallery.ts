@@ -16,15 +16,6 @@ function getFileName(path: string): string {
   return path.split("/").pop() || "";
 }
 
-function getFullImageUrl(filename: string): string | null {
-  for (const path in fullImages) {
-    if (path.endsWith(filename)) {
-      return fullImages[path];
-    }
-  }
-  return null;
-}
-
 function setupImageViewer() {
   const overlay = document.getElementById("fullscreen-overlay") as HTMLElement;
   const fullImage = document.getElementById(
