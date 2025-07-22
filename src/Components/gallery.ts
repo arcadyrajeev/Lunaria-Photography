@@ -38,11 +38,6 @@ function setupImageViewer() {
       const fileName = getFileName(thumbSrc); // same helper from before
       const fullSrc = `/${fileName}`;
 
-      if (!fullSrc) {
-        console.error(`Full image not found for ${fileName}`);
-        return;
-      }
-
       fullImage.src = fullSrc;
       overlay.classList.add("active");
     });
