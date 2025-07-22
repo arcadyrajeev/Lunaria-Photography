@@ -47,7 +47,7 @@ function setupImageViewer() {
       const thumbSrc = (img as HTMLImageElement).src;
       const fileName = getFileName(thumbSrc); // same helper from before
       console.log(fileName);
-      const fullSrc = pullImage(fileName);
+      const fullSrc = `/images/${fileName}`;
 
       fullImage.src = fullSrc;
       overlay.classList.add("active");
