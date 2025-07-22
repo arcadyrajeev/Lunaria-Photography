@@ -26,7 +26,7 @@ function pullImage(fileName: string): string {
   const image = images[path];
 
   if (!image) {
-    console.warn(`Image not found: ${fileName}`);
+    console.warn(`Image not found: ${fileName} path: ${path}`);
     return "";
   } else {
     console.log("It fucking worked!");
