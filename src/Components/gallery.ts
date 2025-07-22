@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Dynamically import all images from the folder
 const images = Object.values(
-  import.meta.glob<string>("/src/assets/Gallery/thumb/*.webp", {
+  import.meta.glob<string>("/src/assets/thumb/*.webp", {
     eager: true,
     import: "default",
   })
