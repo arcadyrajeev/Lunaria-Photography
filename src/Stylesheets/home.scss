@@ -257,14 +257,14 @@ p {
   align-items: center;
   padding-inline: clamp(2rem, 4vw, 4rem);
   justify-content: space-around;
-  height: min(120vw, 85vh);
+  min-height: 50vw;
+  height: fit-content;
   flex-wrap: wrap;
   gap: clamp(1rem, 2vw, 1.5rem);
 
   .image-container {
-    width: max(50vw, 35rem);
-
-    height: max(40vw, 35rem);
+    width: max(40vw, 35rem);
+    height: max(30vw, 35rem);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -306,13 +306,14 @@ p {
   }
 
   .text-card {
-    width: max(30vw, 30rem);
+    width: max(25vw, 25rem);
     padding-right: clamp(1rem, 3vw, 4rem);
     text-align: justify;
     display: flex;
     flex-direction: column;
 
     h2 {
+      font-size: clamp(1rem, 3vw, 3rem);
       color: #26483e;
     }
   }

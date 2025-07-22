@@ -323,14 +323,14 @@ body {
   .intro {
     flex-direction: column;
     margin-block: 3rem;
-    height: 70dvh;
+    height: fit fit-content;
     width: 100%;
     padding: 0;
 
     .image-container {
       display: flex;
       width: 60%;
-      height: 40%;
+      height: max(60vw, 30rem);
       .image-card {
         height: 20rem;
       }

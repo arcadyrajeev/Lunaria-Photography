@@ -259,14 +259,15 @@ body {
   .intro {
     flex-direction: column;
     margin-block: 3rem;
-    height: 70dvh;
+    height: fit -moz-fit-content;
+    height: fit fit-content;
     width: 100%;
     padding: 0;
   }
   .intro .image-container {
     display: flex;
     width: 60%;
-    height: 40%;
+    height: max(60vw, 30rem);
   }
   .intro .image-container .image-card {
     height: 20rem;
