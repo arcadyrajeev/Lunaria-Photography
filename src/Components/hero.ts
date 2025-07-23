@@ -11,12 +11,17 @@ const images = Object.values(
   })
 );
 
+let resizeTimeout: number;
 let currentIndex = 0;
 let slideWidth = window.innerWidth;
 
-function createSlides(): string {
+function createSlides(lazy = true): string {
   return images
-    .map((src) => `<img src="${src}" class="slide" alt="Slideshow image" />`)
+    .map((src, i) =>
+      lazy
+        ? `<img class="slide" loading="lazy" src="" data-src="${src}" alt="Hero slide ${i}" />`
+        : `<img class="slide" src="${src}" alt="Hero slide ${i}" />`
+    )
     .join("");
 }
 
@@ -43,7 +48,7 @@ function prevSlide() {
 
 function startAutoSlide(delay = 15000) {
   setInterval(() => {
-    nextSlide(); // Auto-increments index
+    nextSlide();
   }, delay);
 }
 
@@ -53,13 +58,8 @@ function setupHeroControls() {
 
   if (!prevButton || !nextButton) return;
 
-  prevButton.addEventListener("click", () => {
-    prevSlide(); // Manual nav, same index tracker
-  });
-
-  nextButton.addEventListener("click", () => {
-    nextSlide();
-  });
+  prevButton.addEventListener("click", prevSlide);
+  nextButton.addEventListener("click", nextSlide);
 }
 
 function animateButtonsOnScroll() {
@@ -81,6 +81,29 @@ function animateButtonsOnScroll() {
   });
 }
 
+// ✅ Lazy loading using IntersectionObserver
+function setupLazyLoad() {
+  const lazyImages =
+    document.querySelectorAll<HTMLImageElement>("img[data-src]");
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target as HTMLImageElement;
+          img.src = img.dataset.src!;
+          img.removeAttribute("data-src");
+          observer.unobserve(img);
+        }
+      });
+    },
+    {
+      rootMargin: "200px", // preload a bit earlier
+    }
+  );
+
+  lazyImages.forEach((img) => observer.observe(img));
+}
+
 export function Hero() {
   requestAnimationFrame(() => {
     const track = document.querySelector(".slideshow-track") as HTMLElement;
@@ -88,14 +111,18 @@ export function Hero() {
       track.style.width = `${images.length * 100}vw`;
     }
 
-    updateSlidePosition(); // Initial
+    updateSlidePosition();
     setupHeroControls();
     animateButtonsOnScroll();
-    startAutoSlide(); // 🔥 Always active, never paused
+    startAutoSlide();
+    setupLazyLoad(); // 🧠 initialize lazy loading here
 
     window.addEventListener("resize", () => {
-      slideWidth = window.innerWidth;
-      updateSlidePosition();
+      clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(() => {
+        slideWidth = window.innerWidth;
+        updateSlidePosition();
+      }, 200);
     });
   });
 
@@ -103,7 +130,7 @@ export function Hero() {
     <div class="hero" id="main-content">
       <div class="slideshow-container">
         <div class="slideshow-track">
-          ${createSlides()}
+          ${createSlides(true)} <!-- enable lazy loading -->
         </div>
       </div>
       <div class="ctrl" id="prev"><img src="/arrow-prev.svg" /></div>
