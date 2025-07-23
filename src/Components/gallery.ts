@@ -13,6 +13,31 @@ import galleryData from "../data/gallery.json"; // 👈 Your fake DB
 
 gsap.registerPlugin(ScrollTrigger);
 
+function preloadFullImages() {
+  const images = document.querySelectorAll(
+    ".gallery-image.lazy-load"
+  ) as NodeListOf<HTMLImageElement>;
+
+  images.forEach((img) => {
+    const fullSrc = img.dataset.full;
+    if (!fullSrc) return;
+
+    const fullImg = new Image();
+    fullImg.src = fullSrc;
+
+    fullImg.onload = () => {
+      // When the full image is loaded, fade it in
+      img.classList.add("fade-out");
+
+      setTimeout(() => {
+        img.src = fullSrc;
+        img.classList.remove("fade-out");
+        img.classList.add("fade-in");
+      }, 200); // delay to allow CSS fade out
+    };
+  });
+}
+
 function setupImageViewer() {
   const overlay = document.getElementById("fullscreen-overlay") as HTMLElement;
   const fullImage = document.getElementById(
@@ -61,6 +86,7 @@ export function Gallery() {
   setTimeout(() => {
     setupImageViewer();
     animateImages();
+    preloadFullImages();
   }, 0);
 
   const columns: GalleryItem[][] = [[], [], [], []];
