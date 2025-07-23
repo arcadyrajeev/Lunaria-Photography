@@ -64,12 +64,18 @@ $offwhite: #ede6dd;
       overflow: hidden;
       cursor: pointer;
 
+      &:hover::after {
+        opacity: 1;
+        transform: scale(1);
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
       &::after {
         content: "VIEW IMAGE";
         pointer-events: none;
         position: absolute;
-        display: none;
-        visibility: hidden;
+        display: flex;
         align-items: center;
         justify-content: center;
         font-family: "Albert sans";
@@ -87,6 +93,7 @@ $offwhite: #ede6dd;
         transform: scale(0);
         background-color: rgba(10, 10, 10, 0.6);
         color: $offwhite;
+        will-change: transform;
 
         transition:
           opacity 0.3s ease-in-out,
@@ -181,13 +188,7 @@ $offwhite: #ede6dd;
         width: 100%;
 
         &::after {
-          display: none;
-          transition: none;
-
-          &:hover::after {
-            display: none;
-            visibility: hidden;
-          }
+          content: none;
         }
 
         img {
@@ -201,8 +202,6 @@ $offwhite: #ede6dd;
 
 @media (hover: hover) and (pointer: fine) {
   .img-container:hover::after {
-    display: flex;
-    visibility: visible;
     opacity: 1;
     transform: scale(1);
     border-top-left-radius: 0;
