@@ -259,7 +259,7 @@ p {
   flex-direction: column;
 }
 .intro .text-card h2 {
-  font-size: clamp(1rem, 3vw, 3rem);
+  font-size: clamp(2.2rem, 2.5vw, 2.5rem);
   color: #26483e;
 }
 
