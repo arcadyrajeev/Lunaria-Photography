@@ -139,12 +139,12 @@ body {
   }
   .intro .image-container #card1 {
     z-index: 1;
-    transform: translateX(-12vw) translateY(-50vw);
+    transform: translateX(-12vw) translateY(-45vw);
     background-color: #26483e;
   }
   .intro .image-container #card2 {
     z-index: 1;
-    transform: translateX(12vw) translateY(50vw);
+    transform: translateX(12vw) translateY(45vw);
     background-color: #a293b2;
   }
   .intro .image-container #card3 {
