@@ -38,7 +38,7 @@ function animateImages() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: "#gallery",
-      start: "top-=100 top",
+      start: "top-=130 top",
       end: "top+=200 top",
     },
   });
