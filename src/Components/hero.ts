@@ -100,7 +100,7 @@ export function Hero() {
   });
 
   return `
-    <div class="hero" id="main-content">
+    <section class="hero" id="main-content">
       <div class="slideshow-container">
         <div class="slideshow-track">
           ${createSlides()}
@@ -108,6 +108,6 @@ export function Hero() {
       </div>
       <div class="ctrl" id="prev"><img src="/arrow-prev.svg" /></div>
       <div class="ctrl" id="next"><img src="/arrow-next.svg" /></div>
-    </div>
+    </section>
   `;
 }

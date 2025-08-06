@@ -96,7 +96,7 @@ export function Gallery() {
   });
 
   return `
-    <div class="gallery" id="gallery">
+    <section class="gallery" id="gallery">
       <h1 class="gallery-title">Gallery</h1>
       <div class="image-grid">
         ${columns
@@ -123,7 +123,7 @@ export function Gallery() {
           )
           .join("")}
       </div>
-    </div>
+    </section>
 
     <!-- Fullscreen viewer -->
     <div class="fullscreen-overlay" id="fullscreen-overlay">

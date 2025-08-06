@@ -1,6 +1,6 @@
 export function Footer() {
   return `
-    <section class="footer" id="footer">
+    <footer class="footer" id="footer">
       <div class="footer-container">
         <div class="site-map">
           <a href="#main-content">Home</a>
@@ -33,6 +33,6 @@ export function Footer() {
         <p>&copy; ${new Date().getFullYear()} Lunaria Photography. All rights reserved.</p>
         <p id="creator">CREATED BY ARCADY</p>
       </div>
-    </section>
+    </footer>
   `;
 }

@@ -50,7 +50,7 @@ export function Intro() {
   });
 
   return `
-    <div class="intro">
+    <section class="intro">
       <div class="image-container">
         <div class="image-card" id="card1"><img src="/intro/3.webp"></div>
         <div class="image-card" id="card2"><img src="/intro/2.webp"></div>
@@ -63,6 +63,6 @@ export function Intro() {
 
         <p>Whether it’s an intimate wedding, a soulful portrait, or a quiet moment in nature, we believe that every frame should feel like poetry. With a keen eye for detail and a passion for natural light, we craft images that evoke warmth, connection, and a sense of quiet wonder.</p>
       </div>
-    </div>
+    </section>
   `;
 }

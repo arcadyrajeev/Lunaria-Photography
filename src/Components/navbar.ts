@@ -69,7 +69,7 @@ export function Navbar() {
   });
 
   return `
-    <div class="navbar">
+    <header class="navbar">
       <div class="logo" id="logo">
         <img src='/Logo-hero.svg' alt="Lunaria Photography Logo">
       </div>
@@ -82,6 +82,6 @@ export function Navbar() {
       <div class="button">
           <a href="#footer">Contact</a>
       </div>
-    </div>
+    </header>
   `;
 }
