@@ -317,37 +317,9 @@ body {
 
 @media (min-width: 600px) and (max-width: 1140px) {
   .navbar {
-    .navlink {
-      transform: translateX(-5rem);
-
+    .nav-links {
       a {
-        font-size: clamp(2rem, 5vw, 5rem);
-      }
-    }
-  }
-
-  .intro {
-    flex-direction: column;
-    margin-block: 3rem;
-    height: fit fit-content;
-    width: 100%;
-    padding: 0;
-
-    .image-container {
-      display: flex;
-      width: 60%;
-      height: max(60vw, 30rem);
-      .image-card {
-        height: 20rem;
-      }
-    }
-
-    .text-card {
-      width: 60vw;
-      padding: 0;
-
-      p {
-        font-size: clamp(1.4rem, 1.8vw, 1.5rem);
+        font-size: 1.4rem;
       }
     }
   }

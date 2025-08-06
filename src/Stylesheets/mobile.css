@@ -250,33 +250,7 @@ body {
   }
 }
 @media (min-width: 600px) and (max-width: 1140px) {
-  .navbar .navlink {
-    transform: translateX(-5rem);
-  }
-  .navbar .navlink a {
-    font-size: clamp(2rem, 5vw, 5rem);
-  }
-  .intro {
-    flex-direction: column;
-    margin-block: 3rem;
-    height: fit -moz-fit-content;
-    height: fit fit-content;
-    width: 100%;
-    padding: 0;
-  }
-  .intro .image-container {
-    display: flex;
-    width: 60%;
-    height: max(60vw, 30rem);
-  }
-  .intro .image-container .image-card {
-    height: 20rem;
-  }
-  .intro .text-card {
-    width: 60vw;
-    padding: 0;
-  }
-  .intro .text-card p {
-    font-size: clamp(1.4rem, 1.8vw, 1.5rem);
+  .navbar .nav-links a {
+    font-size: 1.4rem;
   }
 }/*# sourceMappingURL=mobile.css.map */

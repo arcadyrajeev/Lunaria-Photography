@@ -376,7 +376,7 @@ p {
   padding-block: 1.5rem;
 
   background-color: $offwhite;
-  min-height: 90dvh;
+  height: min(90vh, 40rem);
 
   h1 {
     font-family: "Bell MT", serif;

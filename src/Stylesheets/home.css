@@ -314,7 +314,7 @@ p {
   border-radius: 2rem;
   padding-block: 1.5rem;
   background-color: #ede6dd;
-  min-height: 90dvh;
+  height: min(90vh, 40rem);
 }
 .pricing h1 {
   font-family: "Bell MT", serif;
