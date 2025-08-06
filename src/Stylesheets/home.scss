@@ -253,18 +253,19 @@ p {
 
 .intro {
   display: flex;
+  margin-top: 6rem;
   width: 100%;
   align-items: center;
   padding-inline: clamp(2rem, 4vw, 4rem);
   justify-content: space-around;
-  min-height: 50vw;
+  min-height: 20vw;
   height: fit-content;
   flex-wrap: wrap;
   gap: clamp(1rem, 2vw, 1.5rem);
 
   .image-container {
     width: max(40vw, 35rem);
-    height: max(30vw, 35rem);
+    height: max(30vw, 30rem);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -382,7 +383,7 @@ p {
     color: $jetblack;
     font-size: clamp(2rem, 5vw, 5vw);
     font-weight: 500;
-    margin-bottom: 6rem;
+    margin-block: 4rem;
   }
 
   .pricing-container {
@@ -745,9 +746,13 @@ p {
     padding: 2rem;
     justify-content: space-between;
 
+    #copy {
+      color: rgba(175, 174, 174, 0.6);
+    }
+
     #creator {
       font-size: 0.8rem;
-      color: rgba(172, 168, 168, 0.6);
+      color: rgba(218, 214, 214, 0.6);
     }
   }
 }

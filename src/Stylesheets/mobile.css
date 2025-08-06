@@ -116,7 +116,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    margin-block: 10vw;
+    margin-top: 5vw;
     align-items: center;
     justify-content: center;
     height: auto;

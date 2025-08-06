@@ -30,7 +30,7 @@ export function Footer() {
         </div>
       </div>
       <div class="copyright">
-        <p>&copy; ${new Date().getFullYear()} Lunaria Photography. All rights reserved.</p>
+        <p id="copy">&copy; ${new Date().getFullYear()} Lunaria Photography. All rights reserved.</p>
         <p id="creator">CREATED BY ARCADY</p>
       </div>
     </footer>

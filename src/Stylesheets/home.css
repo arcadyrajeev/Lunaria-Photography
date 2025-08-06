@@ -200,11 +200,12 @@ p {
 
 .intro {
   display: flex;
+  margin-top: 6rem;
   width: 100%;
   align-items: center;
   padding-inline: clamp(2rem, 4vw, 4rem);
   justify-content: space-around;
-  min-height: 50vw;
+  min-height: 20vw;
   height: -moz-fit-content;
   height: fit-content;
   flex-wrap: wrap;
@@ -212,7 +213,7 @@ p {
 }
 .intro .image-container {
   width: max(40vw, 35rem);
-  height: max(30vw, 35rem);
+  height: max(30vw, 30rem);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -320,7 +321,7 @@ p {
   color: #1a1a1a;
   font-size: clamp(2rem, 5vw, 5vw);
   font-weight: 500;
-  margin-bottom: 6rem;
+  margin-block: 4rem;
 }
 .pricing .pricing-container {
   display: flex;
@@ -644,7 +645,10 @@ p {
   padding: 2rem;
   justify-content: space-between;
 }
+.footer .copyright #copy {
+  color: rgba(175, 174, 174, 0.6);
+}
 .footer .copyright #creator {
   font-size: 0.8rem;
-  color: rgba(172, 168, 168, 0.6);
+  color: rgba(218, 214, 214, 0.6);
 }/*# sourceMappingURL=home.css.map */
