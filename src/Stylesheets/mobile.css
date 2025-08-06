@@ -190,7 +190,8 @@ body {
     margin-block: 1rem;
     border-radius: 2rem;
     padding-block: 1.5rem;
-    min-height: 90vh;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   .pricing h1 {
     margin-left: 4vw;
