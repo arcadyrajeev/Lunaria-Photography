@@ -9,7 +9,7 @@ type GalleryItem = {
   full: string;
 };
 
-import galleryData from "../data/gallery.json"; // 👈 Your fake DB
+import galleryData from "../data/gallery.json"; //  fake DB
 
 gsap.registerPlugin(ScrollTrigger);
 

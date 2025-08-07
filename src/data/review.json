@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "image": "",
+    "review": "Absolutely loved the photos! Super natural and just what I wanted.",
+    "name": "Megha Suman",
+    "stars": 4.5
+  },
+  {
+    "id": 2,
+    "image": "",
+    "review": "She made me feel so comfortable in front of the camera. The edits were beautiful.",
+    "name": "Ritika Desai",
+    "stars": 4
+  },
+  {
+    "id": 3,
+    "image": "",
+    "review": "Got our maternity photos done — simple, soft, and perfect. Thank you!",
+    "name": "Ayesha Mirza",
+    "stars": 5
+  },
+  {
+    "id": 4,
+    "image": "",
+    "review": "Timely, professional, and exactly the aesthetic I had in mind.",
+    "name": "Kiran Rathi",
+    "stars": 3.5
+  },
+  {
+    "id": 5,
+    "image": "",
+    "review": "Everything felt effortless. The results were amazing.",
+    "name": "Deepali Thakur",
+    "stars": 4.5
+  },
+  {
+    "id": 6,
+    "image": "",
+    "review": "So happy with how the pictures turned out. Will definitely book again!",
+    "name": "Ravi Nair",
+    "stars": 4
+  },
+  {
+    "id": 7,
+    "image": "",
+    "review": "Clean edits, quick turnaround, and she totally got my vision.",
+    "name": "Tanya Verma",
+    "stars": 4
+  },
+  {
+    "id": 8,
+    "image": "",
+    "review": "Hands down the best experience I've had with a photographer.",
+    "name": "Nikhil Shah",
+    "stars": 5
+  }
+]

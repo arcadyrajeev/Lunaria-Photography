@@ -11,6 +11,7 @@ import { Intro } from "./Components/intro";
 import { Location } from "./Components/location";
 import { initMap } from "./utils/mapInit";
 import { Cta } from "./Components/cta-section";
+import { Review } from "./Components/review";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   ${Navbar()}
@@ -19,6 +20,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   ${Intro()}
   ${Pricing()}
   ${Gallery()}
+  ${Review()}
   ${About()}
   ${Location()}
   ${Footer()}

@@ -74,7 +74,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding-inline: clamp(2rem, 4vw, 6rem);
-  z-index: 10;
+  z-index: 99;
   will-change: background-color;
 
   .logo {
@@ -481,6 +481,7 @@ p {
   width: 100%;
   flex-direction: column;
   flex-wrap: wrap;
+
   //height: max(30vw, 80vh);
   height: max-content;
   align-items: center;
@@ -489,11 +490,11 @@ p {
   padding: 2rem;
 
   h1 {
-    margin-block: 3rem;
     color: $jetblack;
     font-family: "Bell MT", serif;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 100;
+    margin-bottom: 4rem;
   }
 
   .content {

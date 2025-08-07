@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "Albert Sans";
+  src: url("../assets/AlbertSans-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bell MT";
+  src: url("../assets/Bell MT Regular.otf") format("opentype");
+}
+* {
+  scroll-behavior: smooth;
+}
+
+.review-section {
+  display: flex;
+  flex-direction: column;
+  height: max(30vw, 30rem);
+  padding-block: 2rem;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+.review-section h1 {
+  font-family: "Bell MT", serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.review-section .review-container {
+  display: flex;
+  padding-inline: 1rem;
+  overflow: hidden;
+  height: 100%;
+  width: 100vw;
+}
+.review-section .review-container .reviews {
+  display: flex;
+  height: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 3rem;
+  padding-block: 2rem;
+  padding-inline: 2rem;
+  cursor: grab;
+  will-change: transform;
+}
+.review-section .review-container .reviews .review-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background-color: #f3f0eb;
+  width: 40vw;
+  min-width: 30vw;
+  padding-block: calc(0.8rem + 0.8vw);
+  padding-inline: calc(1.2rem + 1.6vw);
+  border-radius: 2rem;
+  color: #1a1a1a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+.review-section .review-container .reviews .review-card h3 {
+  text-align: end;
+}
+.review-section .review-container .reviews .review-card .review-box {
+  display: flex;
+  gap: calc(0.8rem + 0.5vw);
+}
+.review-section .review-container .reviews .review-card .review-box img {
+  width: calc(2.5rem + 1.5vw);
+}
+.review-section .review-container .reviews .review-card .review-box p {
+  font-style: italic;
+  font-size: calc(0.6rem + 1vw);
+  margin-bottom: 1rem;
+}
+
+.star-container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 10%;
+  position: relative;
+}
+.star-container img {
+  width: 8rem;
+  height: auto;
+}
+.star-container .star-mask-wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+  width: 4rem;
+  height: 100%;
+}
+.star-container .star-mask-wrapper img {
+  width: 8rem;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .review-section {
+    height: 80dvh;
+  }
+  .review-section .review-container {
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .review-section .review-container .reviews {
+    flex-direction: column;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 100%;
+  }
+  .review-section .review-container .reviews .review-card {
+    width: 80vw;
+    padding-block: calc(1rem + 1vw);
+    padding-inline: calc(1.5rem + 3vw);
+    margin-bottom: 2rem;
+  }
+  .review-section .review-container .reviews .review-card .review-box p {
+    font-size: calc(0.8rem + 1.2vw);
+  }
+}/*# sourceMappingURL=review.css.map */
