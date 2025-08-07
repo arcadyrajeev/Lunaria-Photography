@@ -20,6 +20,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   ${Intro()}
   ${Pricing()}
   ${Gallery()}
+  ${Cta()}
   ${Review()}
   ${About()}
   ${Location()}

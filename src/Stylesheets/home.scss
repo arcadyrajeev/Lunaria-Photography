@@ -344,6 +344,9 @@ p {
 
   .butt {
     background-color: $secondary-color;
+    padding-inline: 1.6rem;
+    padding-block: 0.6rem;
+    font-size: calc(0.8rem + 0.4vw);
 
     &:hover {
       transform: scale(1.05);
@@ -587,12 +590,14 @@ p {
 .cta-button {
   margin-block: 2rem;
   display: flex;
+  overflow: hidden;
   opacity: 1;
   align-items: center;
   justify-content: center;
+  gap: calc(0.8rem + 0.8vw);
   width: max(20vw, 15rem);
   padding-inline: max(2rem, 2vw);
-  padding-block: max(1rem, 1vw);
+  padding-block: max(0.8rem, 1.2vw);
   border-radius: 3rem;
   background-color: #26483e;
   will-change: opacity, transform;
@@ -606,12 +611,34 @@ p {
 
   &:hover a {
     color: $jetblack;
+    transform: translateX(-20%);
+  }
+
+  &:hover img {
+    opacity: 1;
+    transform: translateX(250%);
+  }
+
+  img {
+    position: absolute;
+    opacity: 0;
+    width: 2.6rem;
+    height: auto;
+    margin-right: 0.5rem;
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
   }
 
   a {
+    font-family: "Bell MT", serif;
+    font-size: calc(0.6rem + 0.8vw);
     text-decoration: none;
     color: $offwhite;
     font-weight: 700;
+    transition:
+      transform 0.2s ease-in-out,
+      color 0.2s ease-in-out;
   }
 }
 

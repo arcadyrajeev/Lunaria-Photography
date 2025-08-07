@@ -87,7 +87,7 @@ export function Navbar() {
   return `
     <header class="navbar">
       <div class="logo" id="logo">
-        <img src='/Logo-hero.svg' alt="Lunaria Photography Logo">
+        <a href="#main-content"><img src='/Logo-hero.svg' alt="Lunaria Photography Logo"></a>
       </div>
       <div class="nav-links">
         <a href="#main-content">Home</a>

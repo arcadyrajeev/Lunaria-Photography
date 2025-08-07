@@ -17,6 +17,7 @@ export function Location() {
 
         <div class="cta-button">
           <a href="#contact">Schedule a Shoot</a>
+          <img src="/lense.svg"  id="right-img">
         </div>
       </div>
 

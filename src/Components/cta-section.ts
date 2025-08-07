@@ -26,6 +26,7 @@ export function Cta() {
     <section class="cta" id="cta">
         <div class="cta-button">
           <a href="#contact">Schedule a Shoot</a>
+          <img src="/lense.svg"  id="right-img">
         </div>
     </section>
   `;
