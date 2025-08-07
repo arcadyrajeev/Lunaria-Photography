@@ -167,6 +167,29 @@ $offwhite: #ede6dd;
   filter: blur(0);
 }
 
+@media (max-width: 1024px) {
+  .gallery {
+    padding-inline: calc(0.2rem + 2vw);
+  }
+
+  .image-grid {
+    height: 160vw;
+
+    .img-container {
+      width: 30vw;
+      margin-bottom: calc(0.4rem + 1.5vw);
+
+      &::after {
+        content: none;
+      }
+
+      &:hover::after {
+        content: none;
+      }
+    }
+  }
+}
+
 @media (max-width: 600px) {
   .gallery {
     margin-bottom: 20vw;
@@ -188,6 +211,10 @@ $offwhite: #ede6dd;
         width: 100%;
 
         &::after {
+          content: none;
+        }
+
+        &:hover::after {
           content: none;
         }
 

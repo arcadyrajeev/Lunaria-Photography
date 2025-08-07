@@ -144,6 +144,24 @@
   filter: blur(0);
 }
 
+@media (max-width: 1024px) {
+  .gallery {
+    padding-inline: calc(0.2rem + 2vw);
+  }
+  .image-grid {
+    height: 160vw;
+  }
+  .image-grid .img-container {
+    width: 30vw;
+    margin-bottom: calc(0.4rem + 1.5vw);
+  }
+  .image-grid .img-container::after {
+    content: none;
+  }
+  .image-grid .img-container:hover::after {
+    content: none;
+  }
+}
 @media (max-width: 600px) {
   .gallery {
     margin-bottom: 20vw;
@@ -165,6 +183,9 @@
     width: 100%;
   }
   .gallery .image-grid .img-container::after {
+    content: none;
+  }
+  .gallery .image-grid .img-container:hover::after {
     content: none;
   }
   .gallery .image-grid .img-container img {
