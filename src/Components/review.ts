@@ -7,7 +7,7 @@ import reviewData from "../data/review.json"; //  fake
 
 function setupReviewStars(rating = 0) {
   const width = (rating / 5) * 8.1;
-  console.log(width);
+
   return `${width}rem`;
 }
 
