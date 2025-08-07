@@ -28,7 +28,7 @@ $offwhite: #ede6dd;
 .review-section {
   display: flex;
   flex-direction: column;
-  height: max(30vw, 30rem);
+  height: max(32vw, 25rem);
   padding-block: 2rem;
   position: relative;
   z-index: 10;
@@ -130,6 +130,7 @@ $offwhite: #ede6dd;
       overflow-y: auto;
       scrollbar-width: thin;
       .reviews {
+        align-items: center;
         flex-direction: column;
 
         height: fit-content;
