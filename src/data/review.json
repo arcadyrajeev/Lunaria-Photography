@@ -17,21 +17,21 @@
     "id": 3,
     "image": "",
     "review": "Got our maternity photos done — simple, soft, and perfect. Thank you!",
-    "name": "Ayesha Mirza",
+    "name": "Rachel Smith",
     "stars": 5
   },
   {
     "id": 4,
     "image": "",
     "review": "Timely, professional, and exactly the aesthetic I had in mind.",
-    "name": "Kiran Rathi",
+    "name": "Millie Johnson",
     "stars": 3.5
   },
   {
     "id": 5,
     "image": "",
     "review": "Everything felt effortless. The results were amazing.",
-    "name": "Deepali Thakur",
+    "name": "Robert Miles",
     "stars": 4.5
   },
   {
@@ -52,7 +52,7 @@
     "id": 8,
     "image": "",
     "review": "Hands down the best experience I've had with a photographer.",
-    "name": "Nikhil Shah",
+    "name": "John miller",
     "stars": 5
   }
 ]

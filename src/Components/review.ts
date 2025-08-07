@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
   mm.add("(min-width: 786px)", () => {
     Draggable.create(reviews, {
       type: "x", // horizontal dragging
-      inertia: true, // optional: for momentum (requires InertiaPlugin, Pro only)
+      inertia: true,
       edgeResistance: 0.85,
 
       bounds: {
