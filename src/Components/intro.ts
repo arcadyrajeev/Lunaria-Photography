@@ -51,18 +51,22 @@ export function Intro() {
 
   return `
     <section class="intro">
-      <div class="image-container">
-        <div class="image-card" id="card1"><img src="/intro/3.webp"></div>
-        <div class="image-card" id="card2"><img src="/intro/2.webp"></div>
-        <div class="image-card" id="card3"><img src="/intro/1.webp"></div>
-      </div>
-      <div class="text-card">
-        <p>At</p>
-        <h2>Lunaria Photography,</h2>
-        <p>we don’t just take pictures — we capture stories, emotions, and the fleeting magic of a moment. Inspired by the delicate beauty of the Lunaria flower, our photography is rooted in elegance, authenticity, and timeless aesthetics.</p>
+    <h1>“Every story deserves to be told beautifully - through our lens, your moments last forever.”</h1>
+      <div class="intro-container">
+        <div class="image-container">
+          <div class="image-card" id="card1"><img src="/intro/3.webp"></div>
+          <div class="image-card" id="card2"><img src="/intro/2.webp"></div>
+          <div class="image-card" id="card3"><img src="/intro/1.webp"></div>
+        </div>
+        <div class="text-card">
+          <p>At</p>
+          <h2>Lunaria Photography,</h2>
+          <p>we don’t just take pictures — we capture stories, emotions, and the fleeting magic of a moment. Inspired by the delicate beauty of the Lunaria flower, our photography is rooted in elegance, authenticity, and timeless aesthetics.</p>
 
-        <p>Whether it’s an intimate wedding, a soulful portrait, or a quiet moment in nature, we believe that every frame should feel like poetry. With a keen eye for detail and a passion for natural light, we craft images that evoke warmth, connection, and a sense of quiet wonder.</p>
+          <p>Whether it’s an intimate wedding, a soulful portrait, or a quiet moment in nature, we believe that every frame should feel like poetry. With a keen eye for detail and a passion for natural light, we craft images that evoke warmth, connection, and a sense of quiet wonder.</p>
+        </div>
       </div>
+      
     </section>
   `;
 }

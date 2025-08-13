@@ -156,57 +156,60 @@ body {
     justify-content: center;
     height: auto;
 
-    .image-container {
-      width: 80vw;
-      height: 160vw;
-      display: flex;
+    .intro-container {
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      .image-card {
+      .image-container {
+        width: 80vw;
+        height: 160vw;
         display: flex;
-        width: 45vw;
-        height: 60vw;
-        position: absolute;
-        border-radius: 2rem;
-        will-change: opacity, transform;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .image-card {
+          display: flex;
+          width: 45vw;
+          height: 60vw;
+          position: absolute;
+          border-radius: 2rem;
+          will-change: opacity, transform;
+        }
+
+        #card1 {
+          z-index: 1;
+          transform: translateX(-12vw) translateY(-45vw);
+          background-color: #26483e;
+        }
+        #card2 {
+          z-index: 1;
+          transform: translateX(12vw) translateY(45vw);
+          background-color: #a293b2;
+        }
+        #card3 {
+          z-index: 3;
+          transform: translateY(3vw);
+          background-color: #b46b0a;
+        }
       }
 
-      #card1 {
-        z-index: 1;
-        transform: translateX(-12vw) translateY(-45vw);
-        background-color: #26483e;
-      }
-      #card2 {
-        z-index: 1;
-        transform: translateX(12vw) translateY(45vw);
-        background-color: #a293b2;
-      }
-      #card3 {
-        z-index: 3;
-        transform: translateY(3vw);
-        background-color: #b46b0a;
-      }
-    }
+      .text-card {
+        width: 80vw;
 
-    .text-card {
-      width: 80vw;
+        display: flex;
+        padding-inline: 2rem;
+        text-align: justify;
+        flex-direction: column;
+        font-family: "Albert Sans", sans-serif;
 
-      display: flex;
-      padding-inline: 2rem;
-      text-align: justify;
-      flex-direction: column;
-      font-family: "Albert Sans", sans-serif;
+        p {
+          margin-bottom: 1rem;
+          color: $jetblack;
+          font-size: 0.9rem;
+        }
 
-      p {
-        margin-bottom: 1rem;
-        color: $jetblack;
-        font-size: 0.9rem;
-      }
-
-      h2 {
-        margin-bottom: 2vw;
+        h2 {
+          margin-bottom: 2vw;
+        }
       }
     }
   }

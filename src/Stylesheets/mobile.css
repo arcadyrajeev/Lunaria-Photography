@@ -121,7 +121,10 @@ body {
     justify-content: center;
     height: auto;
   }
-  .intro .image-container {
+  .intro .intro-container {
+    flex-direction: column;
+  }
+  .intro .intro-container .image-container {
     width: 80vw;
     height: 160vw;
     display: flex;
@@ -129,7 +132,7 @@ body {
     align-items: center;
     justify-content: center;
   }
-  .intro .image-container .image-card {
+  .intro .intro-container .image-container .image-card {
     display: flex;
     width: 45vw;
     height: 60vw;
@@ -137,22 +140,22 @@ body {
     border-radius: 2rem;
     will-change: opacity, transform;
   }
-  .intro .image-container #card1 {
+  .intro .intro-container .image-container #card1 {
     z-index: 1;
     transform: translateX(-12vw) translateY(-45vw);
     background-color: #26483e;
   }
-  .intro .image-container #card2 {
+  .intro .intro-container .image-container #card2 {
     z-index: 1;
     transform: translateX(12vw) translateY(45vw);
     background-color: #a293b2;
   }
-  .intro .image-container #card3 {
+  .intro .intro-container .image-container #card3 {
     z-index: 3;
     transform: translateY(3vw);
     background-color: #b46b0a;
   }
-  .intro .text-card {
+  .intro .intro-container .text-card {
     width: 80vw;
     display: flex;
     padding-inline: 2rem;
@@ -160,12 +163,12 @@ body {
     flex-direction: column;
     font-family: "Albert Sans", sans-serif;
   }
-  .intro .text-card p {
+  .intro .intro-container .text-card p {
     margin-bottom: 1rem;
     color: #1a1a1a;
     font-size: 0.9rem;
   }
-  .intro .text-card h2 {
+  .intro .intro-container .text-card h2 {
     margin-bottom: 2vw;
   }
   #standard-package {
